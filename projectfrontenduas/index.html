@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="travelApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller="TravelController">
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="content">
+            <h2 class="sub-heading">Explorer and Travel</h2>
+            <h1 class="main-heading">Let’s Go Now</h1>
+            <p class="description">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+            </p>
+
+            <div class="search-bar">
+                <div class="location">
+                    <span>Location</span>
+                    <select ng-model="selectedLocation" ng-options="location for location in locations"></select>
+                </div>
+                <div class="date">
+                    <span>Date</span>
+                    <input type="date" ng-model="selectedDate">
+                </div>
+                <button class="search-button" ng-click="search()">🔍</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Destinations Section -->
+    <div class="slider-container">
+        <h2 class="section-title">Popular Destinations</h2>
+        <p class="section-subtitle">Explore our top destinations right from our beloved clients' reviews.</p>
+        <button class="nav-button prev" onclick="prevSlide()">&#8249;</button>
+    <button class="nav-button next" onclick="nextSlide()">&#8250;</button>
+
+    <!-- Track slider -->
+    <div class="slider">
+        <div class="slide">
+            <img src="italy.jpg" alt="Italy">
+        </div>
+        <div class="slide">
+            <img src="switzerland.jpg" alt="Switzerland">
+        </div>
+        <div class="slide">
+            <img src="greece.jpg" alt="Greece">
+        </div>
+        <div class="slide">
+            <img src="vietnam.jpg" alt="Vietnam">
+        </div>
+        <div class="slide">
+            <img src="bali.jpg" alt="Vietnam">
+        </div>
+        <div class="slide">
+            <img src="papua.jpg" alt="Vietnam">
+        </div>
+        <div class="slide">
+            <img src="pantai.jpg" alt="Vietnam">
+        </div>
+    </div>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
