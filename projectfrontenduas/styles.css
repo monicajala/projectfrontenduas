@@ -1,21 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
 
-body, html {
+body {
     margin: 0;
-    padding: 0;
     font-family: 'Poppins', sans-serif;
-    height: 100%;
 }
 
 .hero-section {
-    background: url('homepage.jpg') no-repeat center center/cover;
+    position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Teks pindah ke kiri */
+    justify-content: center;
+    text-align: center;
     color: white;
-    padding-left: 50px; /* Memberikan jarak dari kiri */
-    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.hero-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; /* Jadikan gambar latar belakang transparan */
+}
+
+.content {
+    position: relative; /* Agar teks di atas gambar */
+    z-index: 2; /* Mengedepankan konten di atas gambar */
+}
+
+.sub-heading {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+}
+
+.description {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.discover-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.discover-button:hover {
+    background-color: #218838;
 }
 
 .content {
