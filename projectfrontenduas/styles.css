@@ -1,210 +1,182 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
-
 /* General Styles */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9; /* Menggunakan background-color dari CSS kedua */
-    color: #333; /* Menggunakan warna teks dari CSS kedua */
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-h2, p {
+h1, h2, h3, p {
     margin: 0;
 }
 
-/* Navbar Styles */
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
     background-color: #f4c2c2;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar .logo img {
-    width: 60px;
-    height: auto;
+    height: 50px;
 }
 
-.navbar .nav-links {
+.nav-links {
     display: flex;
     gap: 20px;
-    list-style: none;
 }
 
-.navbar .nav-links li a {
-    text-decoration: none;
-    color: #000;
+.nav-links li a {
     font-weight: bold;
+    color: #333;
 }
 
-.navbar .nav-actions {
-    display: flex;
-    gap: 10px;
-}
-
-.navbar .login-button {
-    padding: 5px 15px;
+.nav-actions button {
+    padding: 5px 10px;
     background-color: #d79e9e;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.navbar .theme-toggle img {
-    width: 25px;
-    height: auto;
     cursor: pointer;
 }
 
 /* Hero Section */
 .hero-section {
     position: relative;
-    text-align: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.hero-section img {
+.hero-section .hero-image {
     width: 100%;
-    height: auto;
-}
-
-.hero-section .content {
+    height: 100%;
+    object-fit: cover;
     position: absolute;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
+    transform: translateY(-50%);
 }
 
-.hero-section .sub-heading {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.hero-content h1 {
+    font-size: 48px;
 }
 
-.hero-section .description {
+.hero-content p {
+    margin: 15px 0;
     font-size: 18px;
-    margin-bottom: 20px;
 }
 
-.hero-section .discover-button {
+.cta-button {
     padding: 10px 20px;
     background-color: #d79e9e;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 5px;
-    font-weight: bold;
     cursor: pointer;
 }
 
-/* Slider Section */
-.slider-container {
+/* Popular Destinations */
+.popular-destinations {
+    padding: 40px 20px;
     text-align: center;
-    overflow: hidden; /* Mencegah elemen meluap */
-    width: 100%; /* Sesuaikan lebar container */
-    max-width: 1250px; /* Maksimal lebar slider */
-    padding: 20px;
-    margin: 0 auto; /* Posisikan di tengah */
 }
 
-.section-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.section-subtitle {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 90%;
+    margin: auto;
 }
 
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    position: relative;
+    gap: 15px;
 }
 
 .slide {
-    flex: 0 0 auto;
-    min-width: 20%; /* Memastikan setiap slide memenuhi ruang slider */
-    margin-right: 0;
-    background: #fff;
+    flex: 0 0 300px;
+    background: white;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
+    overflow: hidden;
 }
 
 .slide img {
-    width: 100%; /* Gambar memenuhi lebar slide */
-    max-height: 500px; /* Batas tinggi maksimal gambar */
-    object-fit: cover; /* Pastikan gambar tetap proporsional */
-    border-radius: 10px; /* Tambahkan radius sudut */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-.slide-content {
+.slide h3, .slide p {
+    margin: 10px;
+}
+
+.slider-button {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    width: 90%; /* Sesuaikan ukuran konten */
-}
-
-.slide-content h3 {
-    font-size: 16px; /* Mengecilkan ukuran heading */
-    font-weight: bold;
-    margin: 5px 0;
-}
-
-.slide-content p {
-    margin: 5px 0;
-    font-size: 12px; /* Mengecilkan ukuran teks deskripsi */
-    color: #555;
-}
-
-.slide-content button {
-    padding: 5px 10px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: #fff;
-    cursor: pointer;
-}
-
-.slide-content button:hover {
-    background-color: #0056b3;
-}
-
-/* Navigation Buttons */
-.nav-button {
-    position: absolute;
-    top: 180%;
+    top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-    font-size: 18px;
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
 }
 
-.nav-button.prev {
+.slider-button.prev {
     left: 10px;
 }
 
-.nav-button.next {
+.slider-button.next {
     right: 10px;
 }
 
-.nav-button:hover {
-    background: rgba(0, 0, 0, 0.8);
+/* Testimonials */
+.testimonials {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonial-slider {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+.testimonial img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
