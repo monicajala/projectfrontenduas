@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="travelApp">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Landing Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body ng-controller="TravelController">
+<body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
@@ -18,88 +18,151 @@
             <li><a href="#wishlist">Wishlist</a></li>
         </ul>
         <div class="nav-actions">
-            <button class="login-button">Log In / Sign Up</button>
-            <button class="theme-toggle">
-                <img src="assets/theme-icon.png" alt="Theme Toggle">
-            </button>
+            <button class="login-button" onclick="openPopup('loginPopup')">Log In / Sign Up</button>
+            <button class="theme-toggle">Toggle Theme</button>
         </div>
+
+        <!-- Login Popup -->
+<div class="popup" id="loginPopup">
+    <div class="popup-content">
+        <h2>Log In</h2>
+        <form>
+            <label for="loginUsername">Username</label>
+            <input type="text" id="loginUsername" placeholder="Enter your username" required>
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+            <button type="button" onclick="login()">Log In</button>
+        </form>
+        <p class="toggle-text">Don't have an account? <span onclick="showSignUp()">Sign Up</span></p>
+        <button class="close-popup" onclick="closePopup('loginPopup')">&#10005;</button>
+    </div>
+</div>
+
+<!-- Sign Up Popup -->
+<div class="popup" id="signUpPopup">
+    <div class="popup-content">
+        <h2>Sign Up</h2>
+        <form>
+            <label for="signUpUsername">Username</label>
+            <input type="text" id="signUpUsername" placeholder="Enter your username" required>
+            <label for="signUpEmail">Email</label>
+            <input type="email" id="signUpEmail" placeholder="Enter your email" required>
+            <label for="signUpPassword">Set Password</label>
+            <input type="password" id="signUpPassword" placeholder="Create a password" required>
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+            <button type="button" onclick="signUp()">Sign Up</button>
+        </form>
+        <p class="toggle-text">Already have an account? <span onclick="showLogin()">Log In</span></p>
+        <button class="close-popup" onclick="closePopup('signUpPopup')">&#10005;</button>
+    </div>
+</div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <img src="assets/homepage.jpg" alt="Deskripsi Gambar" class="hero-image">
-        <div class="content">
-            <h2 class="sub-heading">Your Imagination Is Your Only Limit</h2>
-            <p class="description">
-                We always try to make our customers happy. This provides a lot of facilities. Your Destination is our main priority.
-            </p>
-            <button class="discover-button">Discover More</button>
+        <img src="assets/homepage.jpg" alt="Hero Image" class="hero-image">
+        <div class="hero-content">
+            <h1>Your Next Adventure Awaits</h1>
+            <p>Explore amazing destinations around the world with ease.</p>
+            <button class="cta-button">Discover Now</button>
         </div>
     </section>
 
-    <!-- Popular Destinations Section -->
-    <section class="slider-container">
-        <h2 class="section-title">Popular Destinations</h2>
-        <p class="section-subtitle">Explore our top destinations right from our beloved clients' reviews.</p>
-        
-        <div class="slider-wrapper">
-            <button class="nav-button prev" onclick="prevSlide()">&#8249;</button>
+    <!-- Popular Destinations -->
+    <section class="popular-destinations" id="information">
+        <h2>Popular Destinations</h2>
+        <div class="slider-container">
+            <button class="slider-button prev" onclick="moveSlide(-1)">&#8249;</button>
             <div class="slider">
                 <div class="slide">
                     <img src="assets/italy.jpg" alt="Italy">
-                    <div class="slide-content">
-                        <h3>Italy</h3>
-                        <p>📍 20 Packages</p>
-                    </div>
+                    <h3>Italy</h3>
+                    <p>20 Packages</p>
                 </div>
                 <div class="slide">
                     <img src="assets/switzerland.jpg" alt="Switzerland">
-                    <div class="slide-content">
-                        <h3>Switzerland</h3>
-                        <p>📍 20 Packages</p>
-                    </div>
+                    <h3>Switzerland</h3>
+                    <p>15 Packages</p>
                 </div>
                 <div class="slide">
                     <img src="assets/greece.jpg" alt="Greece">
-                    <div class="slide-content">
-                        <h3>Greece</h3>
-                        <p>📍 20 Packages</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="assets/vietnam.jpg" alt="Vietnam">
-                    <div class="slide-content">
-                        <h3>Vietnam</h3>
-                        <p>📍 20 Packages</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="assets/bali.jpg" alt="Bali">
-                    <div class="slide-content">
-                        <h3>Bali</h3>
-                        <p>📍 20 Packages</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="assets/papua.jpg" alt="Papua">
-                    <div class="slide-content">
-                        <h3>Papua</h3>
-                        <p>📍 20 Packages</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="assets/pantai.jpg" alt="Pantai">
-                    <div class="slide-content">
-                        <h3>Pantai</h3>
-                        <p>📍 20 Packages</p>
-                    </div>
+                    <h3>Greece</h3>
+                    <p>12 Packages</p>
                 </div>
             </div>
-            <button class="nav-button next" onclick="nextSlide()">&#8250;</button>
+            <button class="slider-button next" onclick="moveSlide(1)">&#8250;</button>
         </div>
     </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What People Say About Us</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <img src="assets/review.jpg" alt="User 1">
+                <p>"The trip was amazing! Highly recommend this service."</p>
+                <h4>- Jane Doe</h4>
+            </div>
+            <div class="testimonial">
+                <img src="assets/review2.jpg" alt="User 2">
+                <p>"Smooth and hassle-free planning. Absolutely loved it!"</p>
+                <h4>- John Smith</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Write Review Section -->
+    <section class="write-review-section">
+        <button class="write-review-button" onclick="openReviewPopup()">Write a Review</button>
+    </section>
+
+    <!-- Review Popup -->
+<div class="review-popup" id="reviewPopup">
+    <div class="popup-content">
+        <h2>Write a Review</h2>
+        <form id="reviewForm">
+            <label for="reviewName">Your Name</label>
+            <input type="text" id="reviewName" placeholder="Enter your name" required>
+            
+            <label for="reviewMessage">Your Review</label>
+            <textarea id="reviewMessage" placeholder="Write your review here..." required></textarea>
+            
+            <div class="popup-actions">
+                <label class="photo-upload">
+                    <input type="file" id="photoUpload" multiple>
+                    <span>+ Add Photo</span>
+                </label>
+                <button type="button" onclick="submitReview()">Submit</button>
+            </div>
+        </form>
+        <button class="close-popup" onclick="closeReviewPopup()">&#10005;</button>
+    </div>
+</div>
+
+<!-- About Us Section -->
+<section class="about-us">
+    <h2>about us</h2>
+    <p>
+        GoGow is a website that provides people with information about destinations in Indonesia. They can plan their trips and explore top attractions effortlessly.
+    </p>
+    <div class="social-media">
+        <h3>see us</h3>
+        <div class="social-links">
+            <a href="https://twitter.com/gogow" target="_blank">
+                <img src="assets/twitter-icon.png" alt="Twitter Icon"> @gogow
+            </a>
+            <a href="https://youtube.com/gogow" target="_blank">
+                <img src="assets/youtube-icon.png" alt="YouTube Icon"> gogow
+            </a>
+            <a href="https://instagram.com/gogow" target="_blank">
+                <img src="assets/instagram-icon.png" alt="Instagram Icon"> @gogow
+            </a>
+        </div>
+    </div>
+</section>
+
+
     <script src="script.js"></script>
 </body>
 </html>

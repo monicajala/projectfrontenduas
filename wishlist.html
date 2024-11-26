@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="wishlistApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Wishlist</title>
+    <link rel="stylesheet" href="wishliststyle.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="GoGow Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#information">Information</a></li>
+            <li><a href="#plan">Plan</a></li>
+            <li><a href="#wishlist">Wishlist</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="login-button" onclick="openPopup('loginPopup')">Log In / Sign Up</button>
+            <button class="theme-toggle">Toggle Theme</button>
+        </div>
+    </nav>
+
+    <div ng-controller="WishlistController">
+        <!-- Wishlist Section -->
+        <section class="wishlist-section">
+            <!-- Your Holiday Wishlist -->
+            <div class="wishlist">
+                <h2>Your Holiday Wishlist</h2>
+                <ul>
+                    <li ng-repeat="item in wishlist">
+                        <span>{{ item }}</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Create Your Wishlist -->
+            <div class="create-wishlist">
+                <h2>Create Your Wishlist</h2>
+                <form ng-submit="addWishlist()">
+                    <input type="text" ng-model="newWishlist" placeholder="Title of wishlist" required>
+                    <button type="submit">Create</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="wishlistscript.js"></script>
+</body>
+</html>

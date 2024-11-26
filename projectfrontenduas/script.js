@@ -1,59 +1,98 @@
-// AngularJS Application Module
-var app = angular.module('travelApp', []);
+let slideIndex = 0;
 
-// AngularJS Controller untuk lokasi dan pencarian
-app.controller('TravelController', function ($scope) {
-    $scope.locations = ['Thailand', 'Indonesia', 'Vietnam', 'Malaysia'];
-    $scope.selectedLocation = $scope.locations[0];
-    $scope.selectedDate = new Date().toISOString().split('T')[0];
+function moveSlide(step) {
+    const slider = document.querySelector(".slider");
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
 
-    $scope.search = function () {
-        alert('Searching for trips to ' + $scope.selectedLocation + ' on ' + $scope.selectedDate);
-    };
+    slideIndex += step;
+    if (slideIndex < 0) {
+        slideIndex = totalSlides - 1;
+    } else if (slideIndex >= totalSlides) {
+        slideIndex = 0;
+    }
 
-    // Initialize Slider Functionality in AngularJS
-    $scope.initSlider = function () {
-        let currentIndex = 0; // Indeks slide yang sedang aktif
-        const slides = document.querySelectorAll('.slide');
-        const slider = document.querySelector('.slider');
-        const prevButton = document.querySelector('.nav-button.prev');
-        const nextButton = document.querySelector('.nav-button.next');
+    const offset = -slideIndex * slides[0].offsetWidth;
+    slider.style.transform = `translateX(${offset}px)`;
+}
 
-        // Update slider position based on the current index
-        function updateSliderPosition() {
-            const slideWidth = slides[0].offsetWidth + 10; // Slide width + margin
-            slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        }
+// Function to open the review popup
+function openReviewPopup() {
+    document.getElementById("reviewPopup").style.display = "flex";
+}
 
-        // Previous slide functionality
-        function prevSlide() {
-            if (currentIndex > 0) {
-                currentIndex--; // Geser ke slide sebelumnya
-            } else {
-                currentIndex = slides.length - 1; // Kembali ke slide terakhir
-            }
-            updateSliderPosition();
-        }
+// Function to close the review popup
+function closeReviewPopup() {
+    document.getElementById("reviewPopup").style.display = "none";
+}
 
-        // Next slide functionality
-        function nextSlide() {
-            if (currentIndex < slides.length - 1) {
-                currentIndex++; // Geser ke slide berikutnya
-            } else {
-                currentIndex = 0; // Kembali ke slide pertama
-            }
-            updateSliderPosition();
-        }
+// Function to handle review submission
+function submitReview() {
+    const reviewMessage = document.getElementById("reviewMessage").value;
+    const photoUpload = document.getElementById("photoUpload").files;
 
-        // Event listeners for buttons
-        prevButton.addEventListener('click', prevSlide);
-        nextButton.addEventListener('click', nextSlide);
+    if (!reviewMessage.trim()) {
+        alert("Please write a review before submitting.");
+        return;
+    }
 
-        // Initialize slider position
-        window.addEventListener('resize', updateSliderPosition);
-        updateSliderPosition();
-    };
+    alert(`Review submitted successfully with ${photoUpload.length} photo(s).`);
+    closeReviewPopup();
+}
 
-    // Call the slider initialization function after DOM is ready
-    setTimeout($scope.initSlider, 0);
-});
+// Open popup
+function openPopup(popupId) {
+    document.getElementById(popupId).style.display = "flex";
+}
+
+// Close popup
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = "none";
+}
+
+// Show sign-up popup
+function showSignUp() {
+    closePopup('loginPopup');
+    openPopup('signUpPopup');
+}
+
+// Show login popup
+function showLogin() {
+    closePopup('signUpPopup');
+    openPopup('loginPopup');
+}
+
+// Handle login action
+function login() {
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+
+    if (!username || !password) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    alert(`Welcome back, ${username}!`);
+    closePopup('loginPopup');
+}
+
+// Handle sign-up action
+function signUp() {
+    const username = document.getElementById("signUpUsername").value;
+    const email = document.getElementById("signUpEmail").value;
+    const password = document.getElementById("signUpPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (!username || !email || !password || !confirmPassword) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+    alert(`Account created successfully for ${username}!`);
+    closePopup('signUpPopup');
+}
