@@ -39,3 +39,60 @@ function submitReview() {
     alert(`Review submitted successfully with ${photoUpload.length} photo(s).`);
     closeReviewPopup();
 }
+
+// Open popup
+function openPopup(popupId) {
+    document.getElementById(popupId).style.display = "flex";
+}
+
+// Close popup
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = "none";
+}
+
+// Show sign-up popup
+function showSignUp() {
+    closePopup('loginPopup');
+    openPopup('signUpPopup');
+}
+
+// Show login popup
+function showLogin() {
+    closePopup('signUpPopup');
+    openPopup('loginPopup');
+}
+
+// Handle login action
+function login() {
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+
+    if (!username || !password) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    alert(`Welcome back, ${username}!`);
+    closePopup('loginPopup');
+}
+
+// Handle sign-up action
+function signUp() {
+    const username = document.getElementById("signUpUsername").value;
+    const email = document.getElementById("signUpEmail").value;
+    const password = document.getElementById("signUpPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (!username || !email || !password || !confirmPassword) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+    alert(`Account created successfully for ${username}!`);
+    closePopup('signUpPopup');
+}

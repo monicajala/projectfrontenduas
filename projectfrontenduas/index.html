@@ -18,9 +18,45 @@
             <li><a href="#wishlist">Wishlist</a></li>
         </ul>
         <div class="nav-actions">
-            <button class="login-button">Log In / Sign Up</button>
+            <button class="login-button" onclick="openPopup('loginPopup')">Log In / Sign Up</button>
             <button class="theme-toggle">Toggle Theme</button>
         </div>
+
+        <!-- Login Popup -->
+<div class="popup" id="loginPopup">
+    <div class="popup-content">
+        <h2>Log In</h2>
+        <form>
+            <label for="loginUsername">Username</label>
+            <input type="text" id="loginUsername" placeholder="Enter your username" required>
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+            <button type="button" onclick="login()">Log In</button>
+        </form>
+        <p class="toggle-text">Don't have an account? <span onclick="showSignUp()">Sign Up</span></p>
+        <button class="close-popup" onclick="closePopup('loginPopup')">&#10005;</button>
+    </div>
+</div>
+
+<!-- Sign Up Popup -->
+<div class="popup" id="signUpPopup">
+    <div class="popup-content">
+        <h2>Sign Up</h2>
+        <form>
+            <label for="signUpUsername">Username</label>
+            <input type="text" id="signUpUsername" placeholder="Enter your username" required>
+            <label for="signUpEmail">Email</label>
+            <input type="email" id="signUpEmail" placeholder="Enter your email" required>
+            <label for="signUpPassword">Set Password</label>
+            <input type="password" id="signUpPassword" placeholder="Create a password" required>
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+            <button type="button" onclick="signUp()">Sign Up</button>
+        </form>
+        <p class="toggle-text">Already have an account? <span onclick="showLogin()">Log In</span></p>
+        <button class="close-popup" onclick="closePopup('signUpPopup')">&#10005;</button>
+    </div>
+</div>
     </nav>
 
     <!-- Hero Section -->
@@ -104,6 +140,27 @@
     </div>
 </div>
 
+<!-- About Us Section -->
+<section class="about-us">
+    <h2>about us</h2>
+    <p>
+        GoGow is a website that provides people with information about destinations in Indonesia. They can plan their trips and explore top attractions effortlessly.
+    </p>
+    <div class="social-media">
+        <h3>see us</h3>
+        <div class="social-links">
+            <a href="https://twitter.com/gogow" target="_blank">
+                <img src="assets/twitter-icon.png" alt="Twitter Icon"> @gogow
+            </a>
+            <a href="https://youtube.com/gogow" target="_blank">
+                <img src="assets/youtube-icon.png" alt="YouTube Icon"> gogow
+            </a>
+            <a href="https://instagram.com/gogow" target="_blank">
+                <img src="assets/instagram-icon.png" alt="Instagram Icon"> @gogow
+            </a>
+        </div>
+    </div>
+</section>
 
 
     <script src="script.js"></script>
