@@ -76,6 +76,36 @@
         </div>
     </section>
 
+    <!-- Write Review Section -->
+    <section class="write-review-section">
+        <button class="write-review-button" onclick="openReviewPopup()">Write a Review</button>
+    </section>
+
+    <!-- Review Popup -->
+<div class="review-popup" id="reviewPopup">
+    <div class="popup-content">
+        <h2>Write a Review</h2>
+        <form id="reviewForm">
+            <label for="reviewName">Your Name</label>
+            <input type="text" id="reviewName" placeholder="Enter your name" required>
+            
+            <label for="reviewMessage">Your Review</label>
+            <textarea id="reviewMessage" placeholder="Write your review here..." required></textarea>
+            
+            <div class="popup-actions">
+                <label class="photo-upload">
+                    <input type="file" id="photoUpload" multiple>
+                    <span>+ Add Photo</span>
+                </label>
+                <button type="button" onclick="submitReview()">Submit</button>
+            </div>
+        </form>
+        <button class="close-popup" onclick="closeReviewPopup()">&#10005;</button>
+    </div>
+</div>
+
+
+
     <script src="script.js"></script>
 </body>
 </html>
