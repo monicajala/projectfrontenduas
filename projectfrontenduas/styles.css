@@ -1,203 +1,200 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
 
+/* General Styles */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9; /* Menggunakan background-color dari CSS kedua */
+    color: #333; /* Menggunakan warna teks dari CSS kedua */
 }
 
-.hero-section {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    overflow: hidden;
-}
-
-.hero-section img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.5; /* Jadikan gambar latar belakang transparan */
-}
-
-.content {
-    position: relative; /* Agar teks di atas gambar */
-    z-index: 2; /* Mengedepankan konten di atas gambar */
-}
-
-.sub-heading {
-    font-size: 40px;
-    font-weight: 700;
-    font-family: 'Dancing Script', cursive;
+h2, p {
     margin: 0;
 }
 
-.description {
-    font-size: 20px;
-    margin: 20px 0;
-}
-
-.discover-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.discover-button:hover {
-    background-color: #218838;
-}
-
-.content {
-    text-align: left; /* Teks rata kiri */
-    max-width: 600px;
-}
-
-.sub-heading {
-    font-size: 57px; /* Ukuran lebih besar */
-    font-weight: 700; /* Membuat teks lebih tebal */
-    font-family: 'Dancing Script', cursive; /* Gunakan font huruf sambung */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Tambahkan shadow */
-    margin-bottom: 10px;
-    letter-spacing: 1px; /* Jarak antar huruf kecil */
-}
-
-.main-heading {
-    font-size: 64px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-}
-
-.description {
-    font-size: 18px;
-    margin-bottom: 40px;
-    line-height: 1.6;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.search-bar {
+/* Navbar Styles */
+.navbar {
     display: flex;
-    align-items: center; /* Elemen rata tengah secara vertikal */
-    justify-content: space-around; /* Beri spasi proporsional antar elemen */
-    gap: 20px; /* Jarak antar elemen */
-    background: rgba(0, 0, 0, 0.5);
-    padding: 15px 20px;
-    border-radius: 50px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-    max-width: 800px; /* Batas lebar maksimal untuk tata letak */
-    margin: 0 auto; /* Center secara horizontal di halaman */
-}
-
-.search-bar .location,
-.search-bar .date {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    font-size: 14px;
-}
-
-.search-bar select,
-.search-bar input {
-    margin-top: 5px;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    font-size: 16px;
-    width: 180px; /* Ukuran input proporsional */
-}
-
-.search-button {
-    background: linear-gradient(45deg, #ff5722, #ff9800);
-    color: white;
-    border: none;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    background-color: #f4c2c2;
 }
 
-.search-button:hover {
-    transform: scale(1.1);
+.navbar .logo img {
+    width: 60px;
+    height: auto;
 }
 
-/* Container slider */
-.slider-container {
-    max-width: 1000px;
-    margin: 40px auto;
-    overflow: hidden; /* Sembunyikan slide di luar container */
-    position: relative;
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
 }
 
-/* Section Title */
-.section-title {
-    font-size: 32px;
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: #000;
     font-weight: bold;
-    text-align: center;
-    margin-bottom: 10px; /* Jarak antara title dan subtitle */
 }
 
-/* Section Subtitle */
+.navbar .nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar .login-button {
+    padding: 5px 15px;
+    background-color: #d79e9e;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navbar .theme-toggle img {
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    text-align: center;
+}
+
+.hero-section img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-section .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.hero-section .sub-heading {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-section .description {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-section .discover-button {
+    padding: 10px 20px;
+    background-color: #d79e9e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Slider Section */
+.slider-container {
+    text-align: center;
+    overflow: hidden; /* Mencegah elemen meluap */
+    width: 100%; /* Sesuaikan lebar container */
+    max-width: 1250px; /* Maksimal lebar slider */
+    padding: 20px;
+    margin: 0 auto; /* Posisikan di tengah */
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
 .section-subtitle {
     font-size: 16px;
     color: #666;
-    text-align: center;
-    margin-bottom: 30px; /* Jarak antara subtitle dan slider */
+    margin-bottom: 20px;
 }
 
-/* Track untuk semua slide */
 .slider {
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Efek transisi saat slide berpindah */
-}
-
-/* Set ukuran setiap slide */
-.slide {
-    min-width: 300px; /* Atur ukuran slide */
-    height: 400px; /* Rasio 3:4 */
-    margin-right: 5px; /* Jarak antar slide */
-    overflow: hidden;
-    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
     position: relative;
 }
 
-/* Atur gambar dalam slide */
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Agar gambar tidak terdistorsi */
+.slide {
+    flex: 0 0 auto;
+    min-width: 20%; /* Memastikan setiap slide memenuhi ruang slider */
+    margin-right: 0;
+    background: #fff;
     border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-/* Tombol navigasi */
+.slide img {
+    width: 100%; /* Gambar memenuhi lebar slide */
+    max-height: 500px; /* Batas tinggi maksimal gambar */
+    object-fit: cover; /* Pastikan gambar tetap proporsional */
+    border-radius: 10px; /* Tambahkan radius sudut */
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%; /* Sesuaikan ukuran konten */
+}
+
+.slide-content h3 {
+    font-size: 16px; /* Mengecilkan ukuran heading */
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.slide-content p {
+    margin: 5px 0;
+    font-size: 12px; /* Mengecilkan ukuran teks deskripsi */
+    color: #555;
+}
+
+.slide-content button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+.slide-content button:hover {
+    background-color: #0056b3;
+}
+
+/* Navigation Buttons */
 .nav-button {
     position: absolute;
-    top: 65%;
+    top: 180%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
     border: none;
-    font-size: 18px;
-    padding: 10px 15px;
+    padding: 10px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 10;
+    font-size: 18px;
     border-radius: 50%;
-}
-
-.nav-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .nav-button.prev {
@@ -208,17 +205,6 @@ body {
     right: 10px;
 }
 
-
-.btn {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #555;
+.nav-button:hover {
+    background: rgba(0, 0, 0, 0.8);
 }

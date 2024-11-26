@@ -4,14 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Landing Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body ng-controller="TravelController">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="GoGow Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#information">Information</a></li>
+            <li><a href="#plan">Plan</a></li>
+            <li><a href="#wishlist">Wishlist</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="login-button">Log In / Sign Up</button>
+            <button class="theme-toggle">
+                <img src="assets/theme-icon.png" alt="Theme Toggle">
+            </button>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <div class="hero-section">
-        <img src="assets/homepage.jpg" alt="Deskripsi Gambar" />
+    <section class="hero-section">
+        <img src="assets/homepage.jpg" alt="Deskripsi Gambar" class="hero-image">
         <div class="content">
             <h2 class="sub-heading">Your Imagination Is Your Only Limit</h2>
             <p class="description">
@@ -19,48 +35,71 @@
             </p>
             <button class="discover-button">Discover More</button>
         </div>
-    </div>
+    </section>
+
+    <!-- Popular Destinations Section -->
+    <section class="slider-container">
+        <h2 class="section-title">Popular Destinations</h2>
+        <p class="section-subtitle">Explore our top destinations right from our beloved clients' reviews.</p>
+        
+        <div class="slider-wrapper">
+            <button class="nav-button prev" onclick="prevSlide()">&#8249;</button>
+            <div class="slider">
+                <div class="slide">
+                    <img src="assets/italy.jpg" alt="Italy">
+                    <div class="slide-content">
+                        <h3>Italy</h3>
+                        <p>📍 20 Packages</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/switzerland.jpg" alt="Switzerland">
+                    <div class="slide-content">
+                        <h3>Switzerland</h3>
+                        <p>📍 20 Packages</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/greece.jpg" alt="Greece">
+                    <div class="slide-content">
+                        <h3>Greece</h3>
+                        <p>📍 20 Packages</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/vietnam.jpg" alt="Vietnam">
+                    <div class="slide-content">
+                        <h3>Vietnam</h3>
+                        <p>📍 20 Packages</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/bali.jpg" alt="Bali">
+                    <div class="slide-content">
+                        <h3>Bali</h3>
+                        <p>📍 20 Packages</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/papua.jpg" alt="Papua">
+                    <div class="slide-content">
+                        <h3>Papua</h3>
+                        <p>📍 20 Packages</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/pantai.jpg" alt="Pantai">
+                    <div class="slide-content">
+                        <h3>Pantai</h3>
+                        <p>📍 20 Packages</p>
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button next" onclick="nextSlide()">&#8250;</button>
+        </div>
+    </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="script.js"></script>
-</body>
-</html>
-
-    <!-- Popular Destinations Section -->
-    <div class="slider-container">
-        <h2 class="section-title">Popular Destinations</h2>
-        <p class="section-subtitle">Explore our top destinations right from our beloved clients' reviews.</p>
-        <button class="nav-button prev" onclick="prevSlide()">&#8249;</button>
-        <button class="nav-button next" onclick="nextSlide()">&#8250;</button>
-
-        <!-- Track slider -->
-        <div class="slider">
-            <div class="slide">
-                <img src="assets/italy.jpg" alt="Italy">
-            </div>
-            <div class="slide">
-                <img src="assets/switzerland.jpg" alt="Switzerland">
-            </div>
-            <div class="slide">
-                <img src="assets/greece.jpg" alt="Greece">
-            </div>
-            <div class="slide">
-                <img src="assets/vietnam.jpg" alt="Vietnam">
-            </div>
-            <div class="slide">
-                <img src="assets/bali.jpg" alt="Bali">
-            </div>
-            <div class="slide">
-                <img src="assets/papua.jpg" alt="Papua">
-            </div>
-            <div class="slide">
-                <img src="assets/pantai.jpg" alt="Pantai">
-            </div>
-        </div>
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="script.js"></script> <!-- Pastikan ini adalah script untuk logika AngularJS -->
-    <script src="app.js"></script>    <!-- Jika ada script lain, pastikan urutannya benar -->
 </body>
 </html>
