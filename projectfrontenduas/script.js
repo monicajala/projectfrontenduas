@@ -9,9 +9,9 @@ function moveSlide(step) {
 
     slideIndex += step;
     if (slideIndex < 0) {
-        slideIndex = totalSlides - 1;
+        slideIndex = totalSlides - 1;  // kembali ke slide terakhir
     } else if (slideIndex >= totalSlides) {
-        slideIndex = 0;
+        slideIndex = 0;  // kembali ke slide pertama
     }
 
     const offset = -slideIndex * slides[0].offsetWidth;
