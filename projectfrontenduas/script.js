@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 let slideIndex = 0;
 
 function moveSlide(step) {
@@ -27,18 +29,32 @@ function closeReviewPopup() {
 }
 
 // Function to handle review submission
+// Handle review submission
 function submitReview() {
-    const reviewMessage = document.getElementById("reviewMessage").value;
-    const photoUpload = document.getElementById("photoUpload").files;
+    const name = document.getElementById('reviewName').value;
+    const message = document.getElementById('reviewMessage').value;
+    const photos = document.getElementById('photoUpload').files;
 
-    if (!reviewMessage.trim()) {
-        alert("Please write a review before submitting.");
-        return;
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('message', message);
+
+    for (let i = 0; i < photos.length; i++) {
+        formData.append('photos', photos[i]);
     }
 
-    alert(`Review submitted successfully with ${photoUpload.length} photo(s).`);
-    closeReviewPopup();
+    fetch('http://localhost:3001/API/reviews', {
+        method: 'POST',
+        body: formData,
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            alert('Review submitted successfully!');
+            console.log(data);
+        })
+        .catch((error) => console.error('Error:', error));
 }
+
 
 // Open popup
 function openPopup(popupId) {
@@ -67,6 +83,23 @@ function login() {
     const username = document.getElementById("loginUsername").value;
     const password = document.getElementById("loginPassword").value;
 
+    fetch('http://localhost:3001/API/login', {
+        method: 'POST',
+        headers: {
+            'content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password}),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.message === 'Login successful') {
+                alert('Login successful!!'); 
+            } else {
+                alert('Invalid credentials');
+            }
+        })
+        .catch((error) => console.error('Error:',error));
+
     if (!username || !password) {
         alert("Please fill in all fields.");
         return;
@@ -82,6 +115,23 @@ function signUp() {
     const email = document.getElementById("signUpEmail").value;
     const password = document.getElementById("signUpPassword").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
+
+    fetch('http://localhost:3001/API/signup',{
+        method: 'POST',
+        headers: {
+            'Content-Type':'application/json',
+        },
+        body: JSON.stringify({username,email,password}),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.message === 'User created successfully'){
+                alert('Sign-up successful!');
+            } else {
+                alert('Username already exists');
+            }
+        })
+        .catch((error) => console.error('Error:',error));
 
     if (!username || !email || !password || !confirmPassword) {
         alert("Please fill in all fields.");
