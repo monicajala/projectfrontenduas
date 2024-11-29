@@ -146,3 +146,44 @@ function signUp() {
     alert(`Account created successfully for ${username}!`);
     closePopup('signUpPopup');
 }
+
+// Function to toggle between dark and light mode
+function toggleTheme() {
+    // Get the body element
+    const body = document.body;
+
+    // Toggle the 'dark-mode' class on the body
+    body.classList.toggle('dark-mode');
+
+    // Change the button text based on the current theme
+    const themeToggleButton = document.querySelector('.theme-toggle');
+    if (body.classList.contains('dark-mode')) {
+        themeToggleButton.textContent = "Switch to Light Mode";
+    } else {
+        themeToggleButton.textContent = "Switch to Dark Mode";
+    }
+}
+
+// Check if dark mode is enabled in local storage
+window.onload = () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.querySelector('.theme-toggle').textContent = "Switch to Light Mode";
+    }
+};
+
+// Save the theme preference in localStorage
+function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    
+    const themeToggleButton = document.querySelector('.theme-toggle');
+    if (body.classList.contains('dark-mode')) {
+        themeToggleButton.textContent = "Switch to Light Mode";
+        localStorage.setItem('theme', 'dark'); // Save dark mode preference
+    } else {
+        themeToggleButton.textContent = "Switch to Dark Mode";
+        localStorage.setItem('theme', 'light'); // Save light mode preference
+    }
+}
