@@ -14,14 +14,13 @@
     <ul class="nav-links">
         <li><a href="#information">Information</a></li>
         <li><a href="#plan">Plan</a></li>
-        <li><a href="#wishlist">Wishlist</a></li>
+        <li><a href="wishlist.html">Wishlist</a></li>
     </ul>
     <div class="nav-actions">
-        <button class="login-button" onclick="openPopup('loginPopup')">Log In / Sign Up</button>
-        <button class="theme-toggle">Toggle Theme</button>
+        <button class="login-button" ng-click="mainCtrl.openPopup('loginPopup')">Log In / Sign Up</button>
+        <button class="theme-toggle" ng-click="mainCtrl.toggleTheme()">Switch to Dark Mode</button>
     </div>
 </nav>
-
 
 <body ng-app="imageApp" ng-controller="imageController">
   <div class="container">
@@ -35,6 +34,7 @@
         <span class="close" ng-click="closeModal()">&times;</span>
         <h2>{{modalContent.title}}</h2>
         <p>{{modalContent.description}}</p>
+        <a ng-href="{{modalContent.link}}" class="see-more-button" target="_blank">See More</a>
       </div>
     </div>
   </div>

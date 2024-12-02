@@ -12,7 +12,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: #f4c2c2;
+    background-color: rgba(169, 169, 169, 0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -24,19 +24,13 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
+    gap: 55px;
+    position: center;
 }
 
 .nav-links li a {
     font-weight: bold;
     color: #333;
-    text-decoration: none;
-}
-
-.nav-links li a:hover {
-    color: #d79e9e;
 }
 
 .nav-actions button {
@@ -48,8 +42,55 @@ body {
     cursor: pointer;
 }
 
-.nav-actions button:hover {
-    background-color: #f4a5a5;
+.theme-toggle {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    background-color: #2980b9;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #000000a0;
+    color: white;
+}
+
+.navbar.dark-mode {
+    background-color: #000000a0;
+}
+
+.theme-toggle.dark-mode {
+    background-color: #9b59b6;
+}
+
+.theme-toggle.dark-mode:hover {
+    background-color: #8e44ad;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #000000;
+    color: white;  /* Warna teks default untuk mode gelap */
+}
+
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode p {
+    color: #000000; /* Warna teks yang lebih gelap untuk mode gelap */
+}
+
+/* Navbar in Dark Mode */
+.navbar.dark-mode {
+    background-color: #34495e;
+}
+
+.nav-links li a {
+    color: #000000; /* Teks tautan navbar */
 }
 
 /* Wishlist Section */
