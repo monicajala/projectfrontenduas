@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="gogowApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOGOW</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller="MainController as mainCtrl">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/GO GOW.png" alt="GoGow Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#information">Information</a></li>
+            <li><a href="#plan">Plan</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="login-button" ng-click="mainCtrl.openPopup('loginPopup')">Log In / Sign Up</button>
+            <button class="theme-toggle" ng-click="mainCtrl.toggleTheme()">Switch to Dark Mode</button>
+        </div>
+    </nav>
+
+   <!-- Login Popup -->
+<div class="popup" id="loginPopup" ng-show="mainCtrl.isLoginPopupOpen">
+    <div class="popup-content">
+        <h2>Log In</h2>
+        <form ng-submit="mainCtrl.login()">
+            <label for="loginUsername">Username</label>
+            <input type="text" id="loginUsername" ng-model="mainCtrl.loginUsername" placeholder="Enter your username" required>
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" ng-model="mainCtrl.loginPassword" placeholder="Enter your password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <p class="toggle-text">Don't have an account? <span ng-click="mainCtrl.showSignUp()">Sign Up</span></p>
+        <button class="close-popup" ng-click="mainCtrl.closePopup('loginPopup')">&#10005;</button>
+    </div>
+</div>
+
+<!-- Sign Up Popup -->
+<div class="popup" id="signUpPopup" ng-show="mainCtrl.isSignUpPopupOpen">
+    <div class="popup-content">
+        <h2>Sign Up</h2>
+        <form ng-submit="mainCtrl.signUp()">
+            <label for="signUpUsername">Username</label>
+            <input type="text" id="signUpUsername" ng-model="mainCtrl.signUpUsername" placeholder="Enter your username" required>
+            <label for="signUpEmail">Email</label>
+            <input type="email" id="signUpEmail" ng-model="mainCtrl.signUpEmail" placeholder="Enter your email" required>
+            <label for="signUpPassword">Set Password</label>
+            <input type="password" id="signUpPassword" ng-model="mainCtrl.signUpPassword" placeholder="Create a password" required>
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" ng-model="mainCtrl.confirmPassword" placeholder="Confirm your password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="toggle-text">Already have an account? <span ng-click="mainCtrl.showLogin()">Log In</span></p>
+        <button class="close-popup" ng-click="mainCtrl.closePopup('signUpPopup')">&#10005;</button>
+    </div>
+</div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="assets/homepage.jpg" alt="Hero Image" class="hero-image">
+        <div class="hero-content">
+            <h1>Your Next Adventure Awaits</h1>
+            <p>Explore amazing destinations around the world with ease.</p>
+            <button class="cta-button">Discover Now</button>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="popular-destinations" id="information">
+        <h2>Popular Destinations</h2>
+        <div class="slider-container">
+            <button class="slider-button prev" ng-click="mainCtrl.moveSlide(-1)">&#8249;</button>
+            <div class="slider">
+                <div class="slide" ng-repeat="destination in mainCtrl.destinations">
+                    <img ng-src="{{destination.image}}" alt="{{destination.name}}">
+                    <h3>{{destination.name}}</h3>
+                    <p>{{destination.packages}} Packages</p>
+                </div>
+            </div>
+            <button class="slider-button next" ng-click="mainCtrl.moveSlide(1)">&#8250;</button>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What People Say About Us</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial" ng-repeat="testimonial in mainCtrl.testimonials">
+                <img ng-src="{{testimonial.image}}" alt="User 1">
+                <p>"{{testimonial.message}}"</p>
+                <h4>- {{testimonial.name}}</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Write Review Section -->
+    <section class="write-review-section">
+        <button class="write-review-button" ng-click="mainCtrl.openReviewPopup()">Write a Review</button>
+    </section>
+
+    <!-- Review Popup -->
+    <div class="review-popup" id="reviewPopup" ng-show="mainCtrl.isReviewPopupOpen">
+        <div class="popup-content">
+            <h2>Write a Review</h2>
+            <form ng-submit="mainCtrl.submitReview()">
+                <label for="reviewName">Your Name</label>
+                <input type="text" id="reviewName" ng-model="mainCtrl.reviewName" placeholder="Enter your name" required>
+                
+                <label for="reviewMessage">Your Review</label>
+                <textarea id="reviewMessage" ng-model="mainCtrl.reviewMessage" placeholder="Write your review here..." required></textarea>
+                
+                <div class="popup-actions">
+                    <label class="photo-upload">
+                        <input type="file" id="photoUpload" multiple ng-model="mainCtrl.photos">
+                        <span>+ Add Photo</span>
+                    </label>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+            <button class="close-popup" ng-click="mainCtrl.closeReviewPopup()">&#10005;</button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-section about">
+            <img src="assets/GO GOW.png" alt="Logo" class="footer-logo">
+            <p>
+                GoGow is a website that provides people with information about destinations in Indonesia.
+                Explore top destinations and plan your trips easily.
+            </p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-section quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>Email: info@gogow.com</li>
+                <li>Phone: +1 234 567 890</li>
+            </ul>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="footer-section social-media">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://twitter.com/gogow" target="_blank">
+                    <img src="assets/twitter-icon.png" alt="Twitter" class="social-icon">
+                </a>
+                <a href="https://instagram.com/gogow" target="_blank">
+                    <img src="assets/instagram-icon.jpg" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://youtube.com/gogow" target="_blank">
+                    <img src="assets/youtubr-icon.jpg" alt="YouTube" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 GoGow. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
