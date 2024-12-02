@@ -26,7 +26,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: #f4c2c2;
+    background-color: rgba(169, 169, 169, 0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -336,62 +336,120 @@ body.dark-mode p {
     cursor: pointer;
 }
 
-/* About Us Section */
-.about-us {
-    background-color: #fdf2f2;
+/* Footer Styling */
+.footer {
+    background-color: #2c3e50; /* Dark grayish background color */
+    color: white;
     padding: 40px 20px;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-.about-us h2 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.about-us p {
-    font-size: 16px;
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto 30px;
-    line-height: 1.6;
-}
-
-.social-media h3 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.social-links {
+/* Container untuk Footer */
+.footer-container {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.social-links a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #333;
-    font-size: 16px;
+/* Styling untuk setiap section */
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+}
+
+.footer-logo {
+    width: 150px; /* Ukuran logo footer */
+    margin-bottom: 20px;
+}
+
+/* About Section */
+.footer .about p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Quick Links */
+.footer .quick-links h3,
+.footer .contact h3,
+.footer .social-media h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer .quick-links ul,
+.footer .contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .quick-links ul li,
+.footer .contact ul li {
+    margin: 8px 0;
+}
+
+.footer .quick-links ul li a {
+    color: #ecf0f1;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
 }
 
-.social-links a:hover {
-    color: #d79e9e;
+.footer .quick-links ul li a:hover {
+    text-decoration: underline;
 }
 
-.social-links img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
+/* Social Media Icons */
+.footer .social-icons {
+    display: flex;
+    gap: 15px;
 }
+
+.footer .social-icons a {
+    display: block;
+}
+
+.footer .social-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.footer .social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #34495e;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Mengubah footer menjadi vertikal pada perangkat kecil */
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .footer-logo {
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+    }
+}
+
 
 /* Popup Styles */
 .popup {

@@ -14,3 +14,14 @@ app.controller('WishlistController', function ($scope) {
         }
     };
 });
+// Fungsi untuk toggle tema
+mainCtrl.toggleTheme = function() {
+    var body = document.body;
+    body.classList.toggle('dark-mode');
+    var themeToggleButton = document.querySelector('.theme-toggle');
+    if (body.classList.contains('dark-mode')) {
+        themeToggleButton.textContent = "Switch to Light Mode";
+    } else {
+        themeToggleButton.textContent = "Switch to Dark Mode";
+    }
+};
