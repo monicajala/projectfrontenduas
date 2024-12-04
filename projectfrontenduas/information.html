@@ -25,12 +25,13 @@
             <button class="login-button" ng-click="openPopup('loginPopup')">Log In / Sign Up</button>
             <button class="theme-toggle" ng-click="toggleTheme()">Switch to Dark Mode</button>
         </div>
+    </nav>
 </header>
 
 <body ng-controller="MainController1">
-    <!-- Container for first 6 cards -->
+    <!-- Container for first 5 cards -->
     <div class="container">
-        <div class="card" ng-repeat="card in cards | limitTo:6" ng-click="openPopup(card.id)">
+        <div class="card" ng-repeat="card in cards | limitTo:5" ng-click="openPopup(card.id)">
             <img ng-src="{{card.image}}" alt="{{card.alt}}">
             <div class="card-text">
                 <p>{{card.location}}</p>
@@ -39,9 +40,20 @@
         </div>
     </div>
 
-    <!-- Container for next 6 cards -->
+    <!-- Container for next 5 cards -->
     <div class="container">
-        <div class="card" ng-repeat="card in cards | limitTo:6:6" ng-click="openPopup(card.id)">
+        <div class="card" ng-repeat="card in cards | limitTo:5:5" ng-click="openPopup(card.id)">
+            <img ng-src="{{card.image}}" alt="{{card.alt}}">
+            <div class="card-text">
+                <p>{{card.location}}</p>
+                <h3>{{card.title}}</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container for last 5 cards -->
+    <div class="container">
+        <div class="card" ng-repeat="card in cards | limitTo:5:10" ng-click="openPopup(card.id)">
             <img ng-src="{{card.image}}" alt="{{card.alt}}">
             <div class="card-text">
                 <p>{{card.location}}</p>
@@ -59,6 +71,7 @@
             <button class="back-btn" ng-click="closePopup()">Close</button>
         </div>
     </div>
+
     <script src="information.js"></script>
 </body>
 </html>

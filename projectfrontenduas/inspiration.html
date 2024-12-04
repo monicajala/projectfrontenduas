@@ -11,26 +11,30 @@
 <!-- Header Section -->
 <header>
   <nav class="navbar">
-      <div class="logo">
-          <img src="assets/GO GOW.png" alt="GoGow Logo">
-      </div>
-      <ul class="nav-links">
-          <li><a href="nyobaynoba.html">Home</a></li>
-          <li><a href="information.html">Information</a></li>
-          <li><a href="inspiration.html">Inspiration</a></li>
-          <li><a href="wishlist.html">Wishlist</a></li>
-      </ul>
-      <div class="nav-actions">
-          <button class="login-button" ng-click="openPopup('loginPopup')">Log In / Sign Up</button>
-          <button class="theme-toggle" ng-click="toggleTheme()">Switch to Dark Mode</button>
-      </div>
+    <div class="logo">
+      <img src="assets/GO GOW.png" alt="GoGow Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="nyobaynoba.html">Home</a></li>
+      <li><a href="information.html">Information</a></li>
+      <li><a href="inspiration.html">Inspiration</a></li>
+      <li><a href="wishlist.html">Wishlist</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="login-button" ng-click="openPopup('loginPopup')">Log In / Sign Up</button>
+      <button class="theme-toggle" ng-click="toggleTheme()">Switch to Dark Mode</button>
+    </div>
   </nav>
 </header>
 
 <!-- Image Grid Section -->
 <div class="gallery-container">
-  <div class="image-box" ng-repeat="image in images" ng-click="showModal($index)">
-    <img ng-src="{{image.src}}" alt="Image" class="gallery-image">
+  <!-- Generate 3 containers -->
+  <div class="image-container" ng-repeat="container in [0, 1, 2]">
+    <!-- Display 5 images per container -->
+    <div class="image-box" ng-repeat="image in images.slice(container * 5, (container + 1) * 5)">
+      <img ng-src="{{image.src}}" alt="Image" class="gallery-image">
+    </div>
   </div>
 </div>
 
