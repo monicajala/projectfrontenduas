@@ -10,7 +10,13 @@ angular.module('imageApp', [])
       { src: 'assets/pantai.jpg', title: 'Image 3', description: 'Description for Image 3', link: 'https://example.com/pantai' },
       { src: 'assets/papua.jpg', title: 'Image 4', description: 'Description for Image 4', link: 'https://example.com/papua' },
       { src: 'assets/switzerland.jpg', title: 'Image 5', description: 'Description for Image 5', link: 'https://example.com/switzerland' },
+      { src: 'assets/review.jpg', title: 'Image 6', description: 'Description for Image 6', link: 'https://example.com/review' },
+      { src: 'assets/review.jpg', title: 'Image 6', description: 'Description for Image 6', link: 'https://example.com/review' },
+      { src: 'assets/review.jpg', title: 'Image 6', description: 'Description for Image 6', link: 'https://example.com/review' },
+      { src: 'assets/review.jpg', title: 'Image 6', description: 'Description for Image 6', link: 'https://example.com/review' },
       { src: 'assets/review.jpg', title: 'Image 6', description: 'Description for Image 6', link: 'https://example.com/review' }
+
+
     ];
 
     // Modal visibility and content
@@ -27,4 +33,13 @@ angular.module('imageApp', [])
     $scope.closeModal = function() {
       $scope.modalVisible = false;
     };
+
+    $scope.toggleTheme = function () {
+      const body = document.body;
+      body.classList.toggle('dark-mode');
+      const themeToggleButton = document.querySelector('.theme-toggle');
+      themeToggleButton.textContent = body.classList.contains('dark-mode')
+          ? "Switch to Light Mode"
+          : "Switch to Dark Mode";
+  };
   });

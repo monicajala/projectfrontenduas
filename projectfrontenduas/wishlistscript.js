@@ -13,15 +13,15 @@ app.controller('WishlistController', function ($scope) {
             $scope.newWishlist = ""; // Clear the input field
         }
     };
+
+    $scope.toggleTheme = function () {
+        const body = document.body;
+        body.classList.toggle('dark-mode');
+        const themeToggleButton = document.querySelector('.theme-toggle');
+        themeToggleButton.textContent = body.classList.contains('dark-mode')
+            ? "Switch to Light Mode"
+            : "Switch to Dark Mode";
+    };
+
 });
-// Fungsi untuk toggle tema
-mainCtrl.toggleTheme = function() {
-    var body = document.body;
-    body.classList.toggle('dark-mode');
-    var themeToggleButton = document.querySelector('.theme-toggle');
-    if (body.classList.contains('dark-mode')) {
-        themeToggleButton.textContent = "Switch to Light Mode";
-    } else {
-        themeToggleButton.textContent = "Switch to Dark Mode";
-    }
-};
+

@@ -5,22 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Image Pop-ups</title>
   <link rel="stylesheet" href="planstyle.css">
-</head>
-   <!-- Navbar -->
-   <nav class="navbar">
-    <div class="logo">
-        <img src="assets/GO GOW.png" alt="GoGow Logo">
-    </div>
-    <ul class="nav-links">
-        <li><a href="#information">Information</a></li>
-        <li><a href="#plan">Plan</a></li>
-        <li><a href="wishlist.html">Wishlist</a></li>
-    </ul>
-    <div class="nav-actions">
-        <button class="login-button" ng-click="mainCtrl.openPopup('loginPopup')">Log In / Sign Up</button>
-        <button class="theme-toggle" ng-click="mainCtrl.toggleTheme()">Switch to Dark Mode</button>
-    </div>
-</nav>
+
+<!-- Header Section -->
+<header>
+  <nav class="navbar">
+      <div class="logo">
+          <img src="assets/GO GOW.png" alt="GoGow Logo">
+      </div>
+      <ul class="nav-links">
+          <li><a href="nyobaynoba.html">Home</a></li>
+          <li><a href="information.html">Information</a></li>
+          <li><a href="inspiration.html">Inspiration</a></li>
+          <li><a href="wishlist.html">Wishlist</a></li>
+      </ul>
+      <div class="nav-actions">
+          <button class="login-button" ng-click="openPopup('loginPopup')">Log In / Sign Up</button>
+          <button class="theme-toggle" ng-click="toggleTheme()">Switch to Dark Mode</button>
+      </div>
+</header>
 
 <body ng-app="imageApp" ng-controller="imageController">
   <div class="container">
