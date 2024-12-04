@@ -72,20 +72,21 @@
     </section>
 
     <!-- Popular Destinations -->
-    <section class="popular-destinations" id="information">
-        <h2>Popular Destinations</h2>
-        <div class="slider-container">
-            <button class="slider-button prev" ng-click="mainCtrl.moveSlide(-1)">&#8249;</button>
-            <div class="slider">
-                <div class="slide" ng-repeat="destination in mainCtrl.destinations">
-                    <img ng-src="{{destination.image}}" alt="{{destination.name}}">
-                    <h3>{{destination.name}}</h3>
-                    <p>{{destination.packages}} Packages</p>
-                </div>
+<section class="popular-destinations" id="information">
+    <h2>Popular Destinations</h2>
+    <div class="slider-container">
+        <button class="slider-button prev" ng-click="mainCtrl.moveSlide(-1)">&#8249;</button>
+        <div class="slider">
+            <div class="slide" ng-repeat="destination in mainCtrl.destinations" class="destination-item">
+                <img ng-src="{{destination.image}}" alt="{{destination.name}}">
+                <h3>{{destination.name}}</h3>
+                <p>{{destination.packages}} Packages</p>
             </div>
-            <button class="slider-button next" ng-click="mainCtrl.moveSlide(1)">&#8250;</button>
         </div>
-    </section>
+        <button class="slider-button next" ng-click="mainCtrl.moveSlide(1)">&#8250;</button>
+    </div>
+</section>
+
 
     <!-- Testimonials -->
     <section class="testimonials">
