@@ -56,24 +56,6 @@ body {
 
 /* Dark Mode Styles */
 body.dark-mode {
-    background-color: #000000a0;
-    color: white;
-}
-
-.navbar.dark-mode {
-    background-color: #000000a0;
-}
-
-.theme-toggle.dark-mode {
-    background-color: #9b59b6;
-}
-
-.theme-toggle.dark-mode:hover {
-    background-color: #8e44ad;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
     background-color: #000000;
     color: white;  /* Warna teks default untuk mode gelap */
 }
@@ -91,6 +73,12 @@ body.dark-mode p {
 
 .nav-links li a {
     color: #000000; /* Teks tautan navbar */
+}
+
+/* Hero Section in Dark Mode */
+.hero-content h1,
+.hero-content p {
+    color: #ffffff; /* Warna teks untuk konten hero */
 }
 
 /* Wishlist Section */
