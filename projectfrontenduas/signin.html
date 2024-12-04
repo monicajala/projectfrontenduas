@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="authApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In / Sign Up</title>
+    <link rel="stylesheet" href="signinstyle.css">
+</head>
+<body ng-controller="AuthController">
+
+    <!-- Halaman Sign In -->
+    <div ng-show="currentPage === 'signin'">
+        <div class="form-container">
+            <h2>Log In</h2>
+            <form>
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" ng-model="formData.email" required>
+                
+                <label>Password</label>
+                <input type="password" placeholder="Enter your password" ng-model="formData.password" required>
+                
+                <button type="submit" ng-click="signIn()">Log In</button>
+                <p>Don't have an account? <a href="#" ng-click="navigateTo('signup')">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Halaman Sign Up -->
+    <div ng-show="currentPage === 'signup'">
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form>
+                <label>First Name</label>
+                <input type="text" placeholder="First name" ng-model="formData.firstName" required>
+                
+                <label>Last Name</label>
+                <input type="text" placeholder="Last name" ng-model="formData.lastName" required>
+                
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" ng-model="formData.email" required>
+                
+                <label>Password</label>
+                <input type="password" placeholder="Create a password" ng-model="formData.password" required>
+                
+                <button type="submit" ng-click="signUp()">Sign Up</button>
+                <p>Already have an account? <a href="#" ng-click="navigateTo('signin')">Sign In</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="signinscript.js"></script>
+</body>
+</html>
