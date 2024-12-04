@@ -18,21 +18,36 @@ body {
     z-index: 1000;
 }
 
+/* Logo */
 .navbar .logo img {
     height: 50px;
 }
 
+/* Navbar Links */
 .nav-links {
     display: flex;
     gap: 55px;
-    position: center;
+    list-style: none; /* Menghilangkan tanda titik pada daftar */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none; /* Pastikan tidak ada titik */
 }
 
 .nav-links li a {
     font-weight: bold;
+    text-decoration: none; /* Hilangkan garis bawah */
     color: #333;
+    transition: color 0.3s ease-in-out;
 }
 
+.nav-links li a:hover {
+    color: #000; /* Warna teks saat hover */
+}
+
+/* Navbar Actions */
 .nav-actions button {
     padding: 5px 10px;
     background-color: #d79e9e;
@@ -47,6 +62,7 @@ body {
     color: white;
     padding: 10px;
     border: none;
+    border-radius: 20px;
     cursor: pointer;
 }
 
@@ -80,6 +96,7 @@ body.dark-mode p {
 .hero-content p {
     color: #ffffff; /* Warna teks untuk konten hero */
 }
+
 
 /* Wishlist Section */
 .wishlist-section {
