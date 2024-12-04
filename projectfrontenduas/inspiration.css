@@ -1,27 +1,36 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 100vh;
-  background-color: #f0f0f0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1, h2, h3, p {
   margin: 0;
 }
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
 /* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 5%;  /* Use percentage padding to adjust according to screen size */
+  padding: 15px 20px;
   background-color: rgba(169, 169, 169, 0.5);
-  position: fixed;  /* Use fixed instead of sticky to keep the navbar fixed at the top */
+  position: sticky;
   top: 0;
-  left: 0;  /* Ensure the navbar starts at the left of the screen */
-  right: 0;  /* Ensure the navbar spans the full width of the screen */
   z-index: 1000;
-  width: 90%;  /* Ensure the navbar takes the full width of the screen */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Optional: add shadow for better separation */
 }
 
 .navbar .logo img {
@@ -62,24 +71,6 @@ body {
 
 /* Dark Mode Styles */
 body.dark-mode {
-  background-color: #000000a0;
-  color: white;
-}
-
-.navbar.dark-mode {
-  background-color: #000000a0;
-}
-
-.theme-toggle.dark-mode {
-  background-color: #9b59b6;
-}
-
-.theme-toggle.dark-mode:hover {
-  background-color: #8e44ad;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
   background-color: #000000;
   color: white;  /* Warna teks default untuk mode gelap */
 }
@@ -99,38 +90,49 @@ body.dark-mode p {
   color: #000000; /* Teks tautan navbar */
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 100%;
-  gap: 20px;
+.hero-content h1,
+.hero-content p {
+  color: #ffffff;
+}
+
+/* Gallery Styles */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
 }
 
 .image-box {
-  width: 225px; /* Adjust the width as needed */
-  cursor: pointer;
   position: relative;
-}
-
-.image {
-  width: 100%; /* Ensure image takes full width of the container */
-  height: auto;
-  aspect-ratio: 4 / 3; /* Maintain 4:3 aspect ratio */
-  object-fit: cover; /* This ensures the image covers the space without distortion */
+  overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.image:hover {
+.image-box:hover {
   transform: scale(1.05);
 }
 
+.gallery-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-box:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
@@ -139,6 +141,10 @@ body.dark-mode p {
   justify-content: center;
   align-items: center;
   transition: opacity 0.3s ease-in-out;
+}
+
+.modal.show {
+  display: flex;
 }
 
 .modal-content {
@@ -179,4 +185,20 @@ body.dark-mode p {
 
 .see-more-button:hover {
   background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 }

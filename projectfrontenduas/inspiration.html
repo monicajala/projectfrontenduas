@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Image Pop-ups</title>
-  <link rel="stylesheet" href="planstyle.css">
+  <title>Interactive Image Gallery</title>
+  <link rel="stylesheet" href="inspiration.css">
+</head>
+<body ng-app="imageApp" ng-controller="imageController">
 
 <!-- Header Section -->
 <header>
@@ -22,26 +24,27 @@
           <button class="login-button" ng-click="openPopup('loginPopup')">Log In / Sign Up</button>
           <button class="theme-toggle" ng-click="toggleTheme()">Switch to Dark Mode</button>
       </div>
+  </nav>
 </header>
 
-<body ng-app="imageApp" ng-controller="imageController">
-  <div class="container">
-    <div class="image-box" ng-repeat="image in images" ng-click="showModal($index)">
-      <img ng-src="{{image.src}}" alt="Image" class="image">
-    </div>
-
-    <!-- Modal Pop-up -->
-    <div class="modal" ng-show="modalVisible">
-      <div class="modal-content">
-        <span class="close" ng-click="closeModal()">&times;</span>
-        <h2>{{modalContent.title}}</h2>
-        <p>{{modalContent.description}}</p>
-        <a ng-href="{{modalContent.link}}" class="see-more-button" target="_blank">See More</a>
-      </div>
-    </div>
+<!-- Image Grid Section -->
+<div class="gallery-container">
+  <div class="image-box" ng-repeat="image in images" ng-click="showModal($index)">
+    <img ng-src="{{image.src}}" alt="Image" class="gallery-image">
   </div>
+</div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <script src="planscript.js"></script>
+<!-- Modal Pop-up -->
+<div class="modal" ng-show="modalVisible">
+  <div class="modal-content">
+    <span class="close" ng-click="closeModal()">&times;</span>
+    <h2>{{modalContent.title}}</h2>
+    <p>{{modalContent.description}}</p>
+    <a ng-href="{{modalContent.link}}" class="see-more-button" target="_blank">See More</a>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="inspiration.js"></script>
 </body>
 </html>
