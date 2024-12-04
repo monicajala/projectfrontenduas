@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="imageCardsApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Cards with Pop-up</title>
+    <link rel="stylesheet" href="information.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="information.js"></script>
+</head>
+
+<!-- Header Section -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/GO GOW.png" alt="GoGow Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="nyobaynoba.html">Home</a></li>
+            <li><a href="information.html">Information</a></li>
+            <li><a href="#Inspiration.html">Inspiration</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="login-button" ng-click="openPopup('loginPopup')">Log In / Sign Up</button>
+            <button class="theme-toggle" ng-click="toggleTheme()">Switch to Dark Mode</button>
+        </div>
+</header>
+
+<body ng-controller="MainController">
+    <div class="container">
+        <div class="card" ng-repeat="card in cards" ng-click="openPopup(card.id)">
+            <img ng-src="{{card.image}}" alt="{{card.alt}}">
+            <div class="card-text">
+                <p>{{card.location}}</p>
+                <h3>{{card.title}}</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-ups -->
+    <div ng-repeat="card in cards" id="{{card.id}}" class="popup" ng-show="selectedPopup === card.id">
+        <div class="popup-content">
+            <span class="close" ng-click="closePopup()">&times;</span>
+            <h3>{{card.title}}</h3>
+            <p>{{card.description}}</p>
+            <button class="back-btn" ng-click="closePopup()">Close</button>
+        </div>
+    </div>
+    <script src="information.js"></script>
+</body>
+</html>

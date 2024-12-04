@@ -1,0 +1,270 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: white;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: rgba(169, 169, 169, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 55px;
+    position: center;
+}
+
+.nav-links li a {
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-actions button {
+    padding: 5px 10px;
+    background-color: #d79e9e;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.theme-toggle {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    background-color: #2980b9;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #000000;
+    color: white;  /* Warna teks default untuk mode gelap */
+}
+
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode p {
+    color: #000000; /* Warna teks yang lebih gelap untuk mode gelap */
+}
+
+/* Navbar in Dark Mode */
+.navbar.dark-mode {
+    background-color: #34495e;
+}
+
+.nav-links li a {
+    color: #000000; /* Teks tautan navbar */
+}
+
+/* Hero Section in Dark Mode */
+.hero-content h1,
+.hero-content p {
+    color: #ffffff; /* Warna teks untuk konten hero */
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-section .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero-content h1 {
+    font-size: 48px;
+}
+
+.hero-content p {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #d79e9e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Container styles */
+.container, .container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+}
+
+/* Card shared styles */
+.card, .card2 {
+    position: relative;
+    width: 250px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Card hover effect */
+.card:hover, .card2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Image styles */
+.card img, .card2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.card:hover img, .card2:hover img {
+    filter: brightness(1.2);
+}
+
+/* Card text shared styles */
+.card-text, .card-text2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+}
+
+/* Card text specific styles */
+.card-text p, .card-text2 p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+
+.card-text h3, .card-text2 h3 {
+    font-size: 24px;
+}
+
+/* Pop-up container */
+.popup {
+    display: none; /* Pop-up hidden by default */
+    position: fixed; /* Fixed position ensures it's always relative to the viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center pop-up horizontally and vertically */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with transparency */
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Ensure pop-up appears on top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Pop-up content */
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+/* Pop-up title and paragraph */
+.popup-content h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.popup-content p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Back button */
+.back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #d32f2f;
+}
