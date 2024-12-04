@@ -6,7 +6,7 @@ app.controller('MainController', ['$scope', function ($scope) {
     $scope.cards = [
         {
             id: 'popup1',
-            image: 'images/bali.jpeg',
+            image: 'assets/GWK.png',
             alt: 'Location 1',
             location: 'South of Bali',
             title: 'Grand Wisnu Kencana',
@@ -14,7 +14,7 @@ app.controller('MainController', ['$scope', function ($scope) {
         },
         {
             id: 'popup2',
-            image: 'images/bromo.jpeg',
+            image: 'assets/bromo.png',
             alt: 'Location 2',
             location: 'East Java',
             title: 'Mount Bromo',
@@ -22,7 +22,7 @@ app.controller('MainController', ['$scope', function ($scope) {
         },
         {
             id: 'popup3',
-            image: 'images/bunaken.jpeg',
+            image: 'assets/bunaken.png',
             alt: 'Location 3',
             location: 'North Sulawesi',
             title: 'Pulau Bunaken',
@@ -30,7 +30,7 @@ app.controller('MainController', ['$scope', function ($scope) {
         },
         {
             id: 'popup4',
-            image: 'images/jogja.jpeg',
+            image: 'assets/borobudur.png',
             alt: 'Location 4',
             location: 'Central Java',
             title: 'Candi Borobudur',
@@ -38,7 +38,7 @@ app.controller('MainController', ['$scope', function ($scope) {
         },
         {
             id: 'popup5',
-            image: 'images/kota tua.jpeg',
+            image: 'assets/kotu.png',
             alt: 'Location 5',
             location: 'Jakarta',
             title: 'Kota Tua',
@@ -46,7 +46,7 @@ app.controller('MainController', ['$scope', function ($scope) {
         },
         {
             id: 'popup6',
-            image: 'images/labuan bajo.jpeg',
+            image: 'assets/labuan bajo.png',
             alt: 'Location 6',
             location: 'East Nusa Tenggara',
             title: 'Labuan Bajo',
@@ -65,5 +65,17 @@ app.controller('MainController', ['$scope', function ($scope) {
     // Close the popup
     $scope.closePopup = function () {
         $scope.selectedPopup = null;
+    };
+
+    // Toggle theme function
+    $scope.toggleTheme = function () {
+        var body = document.body;
+        body.classList.toggle('dark-mode');
+        var themeToggleButton = document.querySelector('.theme-toggle');
+        if (body.classList.contains('dark-mode')) {
+            themeToggleButton.textContent = "Switch to Light Mode";
+        } else {
+            themeToggleButton.textContent = "Switch to Dark Mode";
+        }
     };
 }]);
