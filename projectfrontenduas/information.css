@@ -149,6 +149,127 @@ body.dark-mode p {
     cursor: pointer;
 }
 
+
+/* Container styles */
+.container, .container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+}
+
+/* Card shared styles */
+.card, .card1 {
+    position: relative;
+    width: 250px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Card hover effect */
+.card:hover, .card1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Image styles */
+.card img, .card1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.card:hover img, .card1:hover img {
+    filter: brightness(1.2);
+}
+
+/* Card text shared styles */
+.card-text, .card-text1 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+}
+
+/* Card text specific styles */
+.card-text p, .card-text1 p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+
+.card-text h3, .card-text1 h3 {
+    font-size: 24px;
+}
+
+/* Pop-up container */
+.popup {
+    display: none; /* Pop-up hidden by default */
+    position: fixed; /* Fixed position ensures it's always relative to the viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center pop-up horizontally and vertically */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with transparency */
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Ensure pop-up appears on top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Pop-up content */
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+/* Pop-up title and paragraph */
+.popup-content h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.popup-content p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Back button */
+.back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #d32f2f;
+}
+
 /* Container styles */
 .container, .container2 {
     display: flex;
@@ -268,3 +389,4 @@ body.dark-mode p {
 .back-btn:hover {
     background-color: #d32f2f;
 }
+

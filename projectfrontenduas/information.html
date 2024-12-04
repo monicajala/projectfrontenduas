@@ -27,9 +27,21 @@
         </div>
 </header>
 
-<body ng-controller="MainController">
+<body ng-controller="MainController1">
+    <!-- Container for first 6 cards -->
     <div class="container">
-        <div class="card" ng-repeat="card in cards" ng-click="openPopup(card.id)">
+        <div class="card" ng-repeat="card in cards | limitTo:6" ng-click="openPopup(card.id)">
+            <img ng-src="{{card.image}}" alt="{{card.alt}}">
+            <div class="card-text">
+                <p>{{card.location}}</p>
+                <h3>{{card.title}}</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container for next 6 cards -->
+    <div class="container">
+        <div class="card" ng-repeat="card in cards | limitTo:6:6" ng-click="openPopup(card.id)">
             <img ng-src="{{card.image}}" alt="{{card.alt}}">
             <div class="card-text">
                 <p>{{card.location}}</p>
