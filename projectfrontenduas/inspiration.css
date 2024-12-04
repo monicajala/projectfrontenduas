@@ -213,10 +213,9 @@ body.dark-mode p {
   background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
-  transition: opacity 0.3s ease-in-out;
 }
 
-.modal.show {
+.modal[ng-show="modalVisible"] {
   display: flex;
 }
 
@@ -253,25 +252,8 @@ body.dark-mode p {
   text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
-  text-align: center;
 }
 
 .see-more-button:hover {
   background-color: #0056b3;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .image-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }

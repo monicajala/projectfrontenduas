@@ -32,7 +32,7 @@
   <!-- Generate 3 containers -->
   <div class="image-container" ng-repeat="container in [0, 1, 2]">
     <!-- Display 5 images per container -->
-    <div class="image-box" ng-repeat="image in images.slice(container * 5, (container + 1) * 5)">
+    <div class="image-box" ng-repeat="image in images.slice(container * 5, (container + 1) * 5)" ng-click="showModal(image)">
       <img ng-src="{{image.src}}" alt="Image" class="gallery-image">
     </div>
   </div>
