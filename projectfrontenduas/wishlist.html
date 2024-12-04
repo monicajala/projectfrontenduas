@@ -7,22 +7,25 @@
     <link rel="stylesheet" href="wishliststyle.css">
 </head>
 
-<body>
-    <!-- Navbar -->
+<!-- Header Section -->
+<header>
     <nav class="navbar">
         <div class="logo">
             <img src="assets/GO GOW.png" alt="GoGow Logo">
         </div>
         <ul class="nav-links">
-            <li><a href="#information">Information</a></li>
-            <li><a href="#plan">Plan</a></li>
-            <li><a href="#wishlist">Wishlist</a></li>
+            <li><a href="nyobaynoba.html">Home</a></li>
+            <li><a href="information.html">Information</a></li>
+            <li><a href="inspiration.html">Inspiration</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
         </ul>
         <div class="nav-actions">
-            <button class="login-button" onclick="openPopup('loginPopup')">Log In / Sign Up</button>
-            <button class="theme-toggle" ng-click="mainCtrl.toggleTheme()">Switch to Dark Mode</button>
+            <button class="login-button" ng-click="openPopup('loginPopup')">Log In / Sign Up</button>
+            <button class="theme-toggle" ng-click="toggleTheme()">Switch to Dark Mode</button>
         </div>
-    </nav>
+</header>
+
+<body>
 
     <div ng-controller="WishlistController">
         <!-- Wishlist Section -->

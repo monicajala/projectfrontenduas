@@ -98,6 +98,7 @@ body.dark-mode p {
 .nav-links li a {
   color: #000000; /* Teks tautan navbar */
 }
+
 .container {
   display: flex;
   flex-wrap: wrap;
