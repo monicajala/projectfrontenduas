@@ -13,14 +13,14 @@ app.controller('WishlistController', function ($scope) {
             $scope.newWishlist = ""; // Clear the input field
         }
     };
+    
 
-    $scope.toggleTheme = function () {
-        const body = document.body;
-        body.classList.toggle('dark-mode');
-        const themeToggleButton = document.querySelector('.theme-toggle');
-        themeToggleButton.textContent = body.classList.contains('dark-mode')
-            ? "Switch to Light Mode"
-            : "Switch to Dark Mode";
-    };
-});
+    $scope.themeText = "Switch to Dark Mode"; // Default text
 
+$scope.toggleTheme = function () {
+    const body = document.body;
+    body.classList.toggle('dark-mode'); // Tambahkan atau hapus kelas dark-mode
+    $scope.themeText = body.classList.contains('dark-mode')
+        ? "Switch to Light Mode"
+        : "Switch to Dark Mode";
+};
