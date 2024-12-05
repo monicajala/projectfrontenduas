@@ -1,37 +1,22 @@
 // Define AngularJS module and controller
-angular.module('gogowApp', [])
-    .controller('MainController', function() {
+var app = angular.module('gogowApp', [])
+    app.controller('MainController', function() {
     var mainCtrl = this;
-    
+
     mainCtrl.destinations = [
-        { name: 'Italy', image: 'assets/italy.jpg', packages: 20 },
-        { name: 'Switzerland', image: 'assets/switzerland.jpg', packages: 15 },
-        { name: 'Greece', image: 'assets/greece.jpg', packages: 12 },
-        { name: 'Pantai', image: 'assets/pantai.jpg', packages: 12 },
-        { name: 'Vietnam', image: 'assets/vietnam.jpg', packages: 12 },
-        { name: 'Papua', image: 'assets/papua.jpg', packages: 12 }
+            { name: 'Paris', image: 'assets/papua.jpg' },
+            { name: 'New York', image: 'assets/nusapeninda.png' },
+            { name: 'Tokyo', image: 'assets/bali.jpg' },
+            { name: 'London', image: 'assets/rajaampat.png' },
+            { name: 'Rome', image: 'assets/borobudur.png' },
+            { name: 'Sydney', image: 'assets/malioboro.png' }
     ];
 
-    mainCtrl.sliderIndex = 0;  // Indeks slider awal
-    mainCtrl.sliderOffset = 0; // Offset pergeseran slider
-
-    // Fungsi untuk menggerakkan slide
-    mainCtrl.moveSlide = function(step) {
-        var totalSlides = document.querySelectorAll('.slide').length;
-        mainCtrl.sliderIndex += step;
-
-        if (mainCtrl.sliderIndex < 0) {
-            mainCtrl.sliderIndex = totalSlides - 1;  // kembali ke slide terakhir
-        } else if (mainCtrl.sliderIndex >= totalSlides) {
-            mainCtrl.sliderIndex = 0;  // kembali ke slide pertama
-        }
-
-        mainCtrl.sliderOffset = -mainCtrl.sliderIndex * 100;  // Mengatur offset slider
-    };
 
     mainCtrl.testimonials = [
         { name: 'Jane Doe', message: 'The trip was amazing! Highly recommend this service.', image: 'assets/review.jpg' },
-        { name: 'John Smith', message: 'Smooth and hassle-free planning. Absolutely loved it!', image: 'assets/review2.jpg' }
+        { name: 'John Smith', message: 'Smooth and hassle-free planning. Absolutely loved it!', image: 'assets/review2.jpg' },
+        { name: 'Sarah Day', message: 'The place was amazing! Definetly going to visit there again next time.', image: 'assets/review3.jpg' }
     ];
 
 
@@ -47,7 +32,7 @@ angular.module('gogowApp', [])
         }
     };
 
-    
-    
 });
+    
+
 
