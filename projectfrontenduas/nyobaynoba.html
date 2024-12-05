@@ -41,18 +41,14 @@
     </section>
 
     <!-- Popular Destinations -->
-    <section class="popular-destinations" id="information">
+    <section class="popular-destinations">
         <h2>Popular Destinations</h2>
-        <div class="slider-container">
-            <button class="slider-button prev" ng-click="mainCtrl.moveSlide(-1)">&#8249;</button>
-            <div class="slider">
-                <div class="slide" ng-repeat="destination in mainCtrl.destinations">
-                    <img ng-src="{{destination.image}}" alt="{{destination.name}}">
-                    <h3>{{destination.name}}</h3>
-                    <p>{{destination.packages}} Packages</p>
-                </div>
+        
+        <div class="destination-slider">
+            <div class="destination" ng-repeat="destination in mainCtrl.destinations">
+                <img ng-src="{{destination.image}}" alt="{{destination.name}}">
+                <div class="destination-name">{{destination.name}}</div>
             </div>
-            <button class="slider-button next" ng-click="mainCtrl.moveSlide(1)">&#8250;</button>
         </div>
     </section>
 
