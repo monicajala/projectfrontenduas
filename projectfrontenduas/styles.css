@@ -233,7 +233,7 @@ body.dark-mode p {
 }
 
 .testimonial img {
-    width: 50px;
+    width: 50px; 
     height: 50px;
     border-radius: 50%;
     margin-bottom: 15px;
@@ -260,81 +260,6 @@ body.dark-mode p {
     background-color: #f4a5a5;
 }
 
-/* Popup Styles */
-.review-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 400px;
-    position: relative;
-    text-align: center;
-}
-
-.popup-content h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
-
-.popup-content textarea {
-    width: 90%;
-    height: 100px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-.popup-content input[type="text"] {
-    width: 90%;
-    height: 40px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-}
-
-.popup-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.photo-upload {
-    background-color: #d79e9e;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.photo-upload input {
-    display: none;
-}
-
-.popup-actions button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 /* Footer Styling */
 .footer {

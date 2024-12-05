@@ -22,6 +22,5 @@ app.controller('WishlistController', function ($scope) {
             ? "Switch to Light Mode"
             : "Switch to Dark Mode";
     };
-
 });
 
