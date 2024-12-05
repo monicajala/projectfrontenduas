@@ -1,13 +1,7 @@
 // Define AngularJS module and controller
-var app = angular.module('gogowApp', []);
-
-app.controller('MainController', function($scope) {
+angular.module('gogowApp', [])
+    .controller('MainController', function() {
     var mainCtrl = this;
-
-    // Default state - Pastikan nilai boolean untuk popup didefinisikan dengan benar
-    mainCtrl.isLoginPopupOpen = false;
-    mainCtrl.isSignUpPopupOpen = false;
-    mainCtrl.isReviewPopupOpen = false;
     
     mainCtrl.destinations = [
         { name: 'Italy', image: 'assets/italy.jpg', packages: 20 },
@@ -40,33 +34,6 @@ app.controller('MainController', function($scope) {
         { name: 'John Smith', message: 'Smooth and hassle-free planning. Absolutely loved it!', image: 'assets/review2.jpg' }
     ];
 
-    // Function untuk membuka dan menutup popup
-    mainCtrl.openPopup = function(popupId) {
-        // Menyembunyikan semua popup terlebih dahulu
-        mainCtrl.isLoginPopupOpen = false;
-        mainCtrl.isSignUpPopupOpen = false;
-        mainCtrl.isReviewPopupOpen = false;
-
-        // Menampilkan popup yang diminta
-        if (popupId === 'loginPopup') {
-            mainCtrl.isLoginPopupOpen = true;
-        } else if (popupId === 'signUpPopup') {
-            mainCtrl.isSignUpPopupOpen = true;
-        } else if (popupId === 'reviewPopup') {
-            mainCtrl.isReviewPopupOpen = true;
-        }
-    };
-
-    // Fungsi untuk menutup popup
-    mainCtrl.closePopup = function(popupId) {
-        if (popupId === 'loginPopup') {
-            mainCtrl.isLoginPopupOpen = false;
-        } else if (popupId === 'signUpPopup') {
-            mainCtrl.isSignUpPopupOpen = false;
-        } else if (popupId === 'reviewPopup') {
-            mainCtrl.isReviewPopupOpen = false;
-        }
-    };
 
     // Fungsi untuk toggle tema
     mainCtrl.toggleTheme = function() {
@@ -80,22 +47,7 @@ app.controller('MainController', function($scope) {
         }
     };
 
-    // Fungsi untuk submit review
-    mainCtrl.submitReview = function() {
-        // Submit review logic
-    };
-
-    // Fungsi untuk membuka popup review
-    mainCtrl.openReviewPopup = function() {
-        mainCtrl.isReviewPopupOpen = true;
-    };
-
-    // Fungsi untuk menutup popup review
-    mainCtrl.closeReviewPopup = function() {
-        mainCtrl.isReviewPopupOpen = false;
-    };
-
+    
     
 });
-
 

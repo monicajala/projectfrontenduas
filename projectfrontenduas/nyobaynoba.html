@@ -33,7 +33,10 @@
         <div class="hero-content">
             <h1>Your Next Adventure Awaits</h1>
             <p>Explore amazing destinations around the world with ease.</p>
-            <button class="cta-button">Discover Now</button>
+            <a ng-href="https://youtu.be/aKtb7Y3qOck?si=2tEm73PY_Opc66ee">
+                <button class="cta-button">Discover the Beauty of Indonesia</button>
+            </a>
+            
         </div>
     </section>
 
@@ -66,32 +69,13 @@
     </section>
 
     <!-- Write Review Section -->
-    <section class="write-review-section">
-        <button class="write-review-button" ng-click="mainCtrl.openReviewPopup()">Write a Review</button>
-    </section>
+<section class="write-review-section">
+    <a ng-href="review.html">
+        <button class="write-review-button">Write a Review</button>
+    </a>
+</section>
 
-    <!-- Review Popup -->
-    <div class="review-popup" id="reviewPopup" ng-show="mainCtrl.isReviewPopupOpen">
-        <div class="popup-content">
-            <h2>Write a Review</h2>
-            <form ng-submit="mainCtrl.submitReview()">
-                <label for="reviewName">Your Name</label>
-                <input type="text" id="reviewName" ng-model="mainCtrl.reviewName" placeholder="Enter your name" required>
-                
-                <label for="reviewMessage">Your Review</label>
-                <textarea id="reviewMessage" ng-model="mainCtrl.reviewMessage" placeholder="Write your review here..." required></textarea>
-                
-                <div class="popup-actions">
-                    <label class="photo-upload">
-                        <input type="file" id="photoUpload" multiple ng-model="mainCtrl.photos">
-                        <span>+ Add Photo</span>
-                    </label>
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-            <button class="close-popup" ng-click="mainCtrl.closeReviewPopup()">&#10005;</button>
-        </div>
-    </div>
+
 
     <!-- Footer Section -->
 <footer class="footer">
@@ -150,5 +134,6 @@
 
 
     <script src="app.js"></script>
+    
 </body>
 </html>
