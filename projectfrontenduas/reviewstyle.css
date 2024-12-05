@@ -1,23 +1,24 @@
-/* Global styles */
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fdf2f2;
+    color: #333;
 }
 
-/* Container for the review form */
+/* Container for the Review Form */
 .review-container {
-    width: 80%;
+    width: 90%;
     max-width: 600px;
     margin: 50px auto;
-    background-color: #f4c2c2;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffe5e5; /* Soft pink */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Form elements */
+/* Form Elements */
 .form-group {
     margin-bottom: 20px;
 }
@@ -26,65 +27,76 @@ label {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
+    color: #444;
 }
 
 input[type="text"],
 textarea {
-    width: 95%;
-    padding: 10px;
+    width: 100%;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 120px; /* Set default height for textarea */
+    resize: vertical; /* Allow resizing vertically only */
 }
 
 input[type="file"] {
     display: block;
     margin-top: 10px;
+    font-size: 14px;
+    color: #555;
 }
 
+/* Form Actions */
 .form-actions {
     display: flex;
-    justify-content: center; /* Horizontally center the button */
-    align-items: center;     /* Vertically center the button */
-    margin-top: 20px;
+    justify-content: center;
+    margin-top: 25px;
 }
+
 button[type="submit"] {
-    background-color: #d79e9e;
+    background-color: #d79e9e; /* Soft red */
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button[type="submit"]:hover {
-    background-color: #d79e9e;
+    background-color: #b96d6d; /* Slightly darker red */
+    transform: scale(1.05); /* Slightly enlarges the button */
 }
 
-/* Styling for the review page */
+/* Heading Style */
 h2 {
     text-align: center;
-    color: #333;
+    color: #555;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 /* Footer Styling */
 .footer {
-    background-color: #2c3e50; /* Dark grayish background color */
+    background-color: #2c3e50; /* Dark gray */
     color: white;
     padding: 40px 20px;
-    font-family: Arial, sans-serif;
 }
 
-/* Container untuk Footer */
 .footer-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-/* Styling untuk setiap section */
 .footer-section {
     flex: 1;
     margin: 10px;
@@ -92,17 +104,15 @@ h2 {
 }
 
 .footer-logo {
-    width: 150px; /* Ukuran logo footer */
-    margin-bottom: 20px;
+    width: 120px;
+    margin-bottom: 15px;
 }
 
-/* About Section */
 .footer .about p {
     font-size: 14px;
     line-height: 1.6;
 }
 
-/* Quick Links */
 .footer .quick-links h3,
 .footer .contact h3,
 .footer .social-media h3 {
@@ -119,6 +129,7 @@ h2 {
 .footer .quick-links ul li,
 .footer .contact ul li {
     margin: 8px 0;
+    font-size: 14px;
 }
 
 .footer .quick-links ul li a {
@@ -130,27 +141,21 @@ h2 {
     text-decoration: underline;
 }
 
-/* Social Media Icons */
 .footer .social-icons {
     display: flex;
     gap: 15px;
 }
 
-.footer .social-icons a {
-    display: block;
-}
-
 .footer .social-icon {
     width: 30px;
     height: 30px;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
 .footer .social-icon:hover {
     transform: scale(1.2);
 }
 
-/* Footer Bottom */
 .footer-bottom {
     text-align: center;
     margin-top: 20px;
@@ -163,22 +168,35 @@ h2 {
     margin: 0;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .footer-container {
-        flex-direction: column; /* Mengubah footer menjadi vertikal pada perangkat kecil */
+        flex-direction: column;
         align-items: center;
     }
 
     .footer-section {
         text-align: center;
-        margin: 20px 0;
+        margin: 15px 0;
     }
 
     .footer-logo {
         margin-bottom: 10px;
     }
+}
 
-    .footer-bottom {
-        margin-top: 20px;
+@media (max-width: 480px) {
+    .review-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    textarea {
+        height: 100px;
     }
 }
