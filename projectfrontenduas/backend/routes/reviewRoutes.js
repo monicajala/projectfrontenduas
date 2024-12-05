@@ -3,11 +3,12 @@ const multer = require('multer');
 const Review = require('../models/Review');
 
 const router = express.Router();
+const path = require('path');
 
 // untuk file upload 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'backend/uploads/');
+        cb(null, path.join(__dirname, '../uploads')); // Gunakan path absolut
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + '-' + file.originalname);
