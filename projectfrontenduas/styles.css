@@ -56,6 +56,10 @@ a {
     cursor: pointer;
 }
 
+.nav-actions button:hover {
+    background-color: #f4a5a5;
+}
+
 .theme-toggle {
     background-color: #3498db;
     color: white;
@@ -152,6 +156,10 @@ body.dark-mode p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #f4a5a5;
 }
 
 /* Popular Destinations */
@@ -403,7 +411,9 @@ body.dark-mode p {
     height: 80px;
     object-fit: cover;
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-top: 35px;
+    
 }
 
 .post-details {
@@ -434,7 +444,7 @@ body.dark-mode p {
 }
 
 .see-more-btn {
-    background-color: #007bff;
+    background-color: #d79e9e;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -446,5 +456,5 @@ body.dark-mode p {
 }
 
 .see-more-btn:hover {
-    background-color: #0056b3;
+    background-color: #f4a5a5;
 }
