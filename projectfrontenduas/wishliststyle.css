@@ -1,23 +1,9 @@
-/* General Styles */
+/* General Styling */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #f9f9f9;
     color: #333;
-}
-
-h1, h2, h3, p {
-    margin: 0;
-}
-
-ul {
-    padding: 0;
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 /* Navbar */
@@ -32,20 +18,36 @@ a {
     z-index: 1000;
 }
 
+/* Logo */
 .navbar .logo img {
     height: 50px;
 }
 
+/* Navbar Links */
 .nav-links {
     display: flex;
     gap: 55px;
+    list-style: none; /* Menghilangkan tanda titik pada daftar */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none; /* Pastikan tidak ada titik */
 }
 
 .nav-links li a {
     font-weight: bold;
+    text-decoration: none; /* Hilangkan garis bawah */
     color: #333;
+    transition: color 0.3s ease-in-out;
 }
 
+.nav-links li a:hover {
+    color: #000; /* Warna teks saat hover */
+}
+
+/* Navbar Actions */
 .nav-actions button {
     padding: 5px 10px;
     background-color: #d79e9e;
@@ -60,6 +62,7 @@ a {
     color: white;
     padding: 10px;
     border: none;
+    border-radius: 20px;
     cursor: pointer;
 }
 
@@ -70,30 +73,28 @@ a {
 /* Dark Mode Styles */
 body.dark-mode {
     background-color: #000000;
-    color: #ffffff;
+    color: white;  /* Warna teks default untuk mode gelap */
 }
 
 body.dark-mode h3,
 body.dark-mode h4,
 body.dark-mode p {
-    color: #ffffff;
+    color: #000000; /* Warna teks yang lebih gelap untuk mode gelap */
 }
 
-body.dark-mode .navbar {
+/* Navbar in Dark Mode */
+.navbar.dark-mode {
     background-color: #34495e;
 }
 
-body.dark-mode .nav-links li a {
-    color: #ffffff;
+.nav-links li a {
+    color: #000000; /* Teks tautan navbar */
 }
 
-body.dark-mode .theme-toggle {
-    background-color: #2980b9;
-    color: #ffffff;
-}
-
-body.dark-mode .nav-actions button {
-    background-color: #e74c3c;
+/* Hero Section in Dark Mode */
+.hero-content h1,
+.hero-content p {
+    color: #ffffff; /* Warna teks untuk konten hero */
 }
 
 
