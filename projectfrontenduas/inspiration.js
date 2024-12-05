@@ -1,7 +1,7 @@
 angular.module('imageApp', [])
   .controller('imageController', function($scope) {
     $scope.images = [
-      { src: 'assets/borobudur.png', title: 'Image 1', description: 'Description 1', link: '#' },
+      { src: 'assets/borobudur.png', title: 'hellooo', description: 'Description 1', link: '#' },
       { src: 'assets/bali.jpg', title: 'Image 2', description: 'Description 2', link: '#' },
       { src: 'assets/bromo.png', title: 'Image 3', description: 'Description 3', link: '#' },
       { src: 'assets/bunaken.png', title: 'Image 4', description: 'Description 4', link: '#' },
@@ -21,11 +21,13 @@ angular.module('imageApp', [])
     $scope.modalVisible = false;
     $scope.modalContent = {};
 
-    $scope.showModal = function(index) {
-      $scope.modalContent = $scope.images[index];
+    // Show modal with content
+    $scope.showModal = function(image) {
+      $scope.modalContent = image;
       $scope.modalVisible = true;
     };
 
+    // Close modal
     $scope.closeModal = function() {
       $scope.modalVisible = false;
     };
@@ -39,3 +41,4 @@ angular.module('imageApp', [])
           : "Switch to Dark Mode";
   };
   });
+

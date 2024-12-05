@@ -21,9 +21,7 @@
       <li><a href="wishlist.html">Wishlist</a></li>
     </ul>
     <div class="nav-actions">
-      <a ng-href="signin.html">
-        <button class="login-button">Log In / Sign Up</button>
-    </a>
+      <button class="login-button" ng-click="openPopup('loginPopup')">Log In / Sign Up</button>
       <button class="theme-toggle" ng-click="toggleTheme()">Switch to Dark Mode</button>
     </div>
   </nav>
@@ -34,7 +32,7 @@
   <!-- Generate 3 containers -->
   <div class="image-container" ng-repeat="container in [0, 1, 2]">
     <!-- Display 5 images per container -->
-    <div class="image-box" ng-repeat="image in images.slice(container * 5, (container + 1) * 5)">
+    <div class="image-box" ng-repeat="image in images.slice(container * 5, (container + 1) * 5)" ng-click="showModal(image)">
       <img ng-src="{{image.src}}" alt="Image" class="gallery-image">
     </div>
   </div>
@@ -64,14 +62,14 @@
 
       <!-- Quick Links Section -->
       <div class="footer-section quick-links">
-        <h3>Quick Links</h3>
-        <ul>
-            <li><a href="nyobaynoba.html">Home</a></li>
-            <li><a href="information.html">Information</a></li>
-            <li><a href="inspiration.html">Inspiration</a></li>
-            <li><a href="wishlist.html">Wishlist</a></li>
-        </ul>
-    </div>
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="nyobaynoba.html">Home</a></li>
+              <li><a href="information.html">Information</a></li>
+              <li><a href="inspiration.html">Inspiration</a></li>
+              <li><a href="wishlist.html">Wishlist</a></li>
+          </ul>
+      </div>
 
       <!-- Contact Section -->
       <div class="footer-section contact">
