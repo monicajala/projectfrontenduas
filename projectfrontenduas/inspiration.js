@@ -1,21 +1,21 @@
 angular.module('imageApp', [])
   .controller('imageController', function($scope) {
     $scope.images = [
-      { src: 'assets/borobudur.png', title: 'hellooo', description: 'Description 1', link: '#' },
-      { src: 'assets/bali.jpg', title: 'Image 2', description: 'Description 2', link: '#' },
-      { src: 'assets/bromo.png', title: 'Image 3', description: 'Description 3', link: '#' },
-      { src: 'assets/bunaken.png', title: 'Image 4', description: 'Description 4', link: '#' },
-      { src: 'assets/danautoba.png', title: 'Image 5', description: 'Description 5', link: '#' },
-      { src: 'assets/gilitrawa.png', title: 'Image 6', description: 'Description 6', link: '#' },
-      { src: 'assets/GWK.png', title: 'Image 7', description: 'Description 7', link: '#' },
-      { src: 'assets/kotu.png', title: 'Image 8', description: 'Description 8', link: '#' },
-      { src: 'assets/labuan bajo.png', title: 'Image 9', description: 'Description 9', link: '#' },
-      { src: 'assets/nusapeninda.png', title: 'Image 10', description: 'Description 10', link: '#' },
-      { src: 'assets/sacred.png', title: 'Image 11', description: 'Description 11', link: '#' },
-      { src: 'assets/rajaampat.png', title: 'Image 12', description: 'Description 12', link: '#' },
-      { src: 'assets/buntuburake.png', title: 'Image 11', description: 'Description 13', link: '#' },
-      { src: 'assets/jamgandang.png', title: 'Image 12', description: 'Description 14', link: '#' },
-      { src: 'assets/belitung.png', title: 'Image 11', description: 'Description 15', link: '#' },
+      { src: 'assets/makbal.png', title: 'Makanan Popular Bali', description: '', link: 'https://www.idntimes.com/food/dining-guide/prila-arofani/tempat-makan-babi-guling-terenak-di-bali ' },
+      { src: 'assets/wisbal.png', title: 'Wisata Popular Bali', description: '', link: 'https://travel.kompas.com/read/2024/11/19/190700727/5-wisata-pantai-terkenal-di-bali-cocok-untuk-liburan-akhir-tahun ' },
+      { src: 'assets/olehbal.png', title: 'Oleh-oleh Popular Bali', description: '', link: 'https://www.detik.com/bali/wisata/d-6380165/15-tempat-oleh-oleh-bali-yang-hits-dan-terkenal ' },
+      { src: 'assets/makjak.png', title: 'Makanan Popular Jakarta', description: '', link: 'https://kumparan.com/seputar-jakarta/35-tempat-makan-di-jakarta-yang-hits-dan-kekinian-21VQZCWcXQ2 ' },
+      { src: 'assets/wisjak.png', title: 'Wisata Popular Jakarta', description: '', link: 'https://www.orami.co.id/magazine/wisata-jakarta' },
+      { src: 'assets/olehjak.png', title: 'Oleh-oleh Popular Jakarta', description: '', link: 'https://megapolitan.kompas.com/read/2022/10/18/00300021/11-tempat-beli-oleh-oleh-di-jakarta?page=all ' },
+      { src: 'assets/makjog.png', title: 'Makanan Popular Jogja', description: '', link: 'https://www.goersapp.com/blog/wisata-kuliner-jogja/' },
+      { src: 'assets/wisjog.png', title: 'Wisata Popular Jogja', description: '', link: 'https://www.yogyes.com/id/yogyakarta-tourism-object/' },
+      { src: 'assets/olehjog.png', title: 'Oleh-oleh Popular Jogja', description: '', link: 'https://terasmalioboro.jogjaprov.go.id/2022/08/10/5-pusat-oleh-oleh-jogja-terpopuler/' },
+      { src: 'assets/makmed.png', title: 'Makanan Popular Medan', description: '', link: 'https://www.kompas.com/food/read/2023/09/03/111700875/35-tempat-makan-enak-di-medan-cocok-untuk-wisata-kulineran' },
+      { src: 'assets/wismed.png', title: 'Wisata Popular Medan', description: '', link: 'https://www.idntimes.com/travel/destination/reza-iqbal/tempat-wisata-di-medan-yang-lagi-hits' },
+      { src: 'assets/olehmed.png', title: 'Oleh-oleh Popular Medan', description: '', link: 'https://www.traveloka.com/id-id/explore/destination/pusat-oleh-oleh-medan-acc/389026' },
+      { src: 'assets/makpal.png', title: 'Makanan Popular Palembang', description: '', link: 'https://www.detik.com/sumbagsel/kuliner/d-7473651/7-tempat-makan-di-palembang-dengan-cita-rasa-yang-autentik' },
+      { src: 'assets/wispal.png', title: 'Wisata Popular Palembang', description: '', link: 'https://www.detik.com/sumbagsel/wisata/d-6761526/17-tempat-wisata-di-palembang-yang-lagi-hits-hingga-ramah-anak' },
+      { src: 'assets/olehpal.png', title: 'Oleh-oleh Palembang', description: '', link: 'https://kumparan.com/jendela-dunia/4-pusat-oleh-oleh-palembang-yang-terkenal-21tZfKLuIky' },
     ];
 
     $scope.modalVisible = false;
