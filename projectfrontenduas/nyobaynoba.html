@@ -52,9 +52,36 @@
         </div>
     </section>
 
+
+    <!-- Latest Travel Post -->
+    <section class="latest-post" id="latest-post">
+        <h2>Latest Travel News</h2>
+
+    <div class="container">
+        <div class="post" ng-repeat="post in posts">
+            <div class="post-header">
+                <img ng-src="{{post.image}}" alt="Post Image" class="post-image">
+                <div class="post-details">
+                    <h2 class="post-title">{{post.title}}</h2>
+                    <p class="post-location">{{post.location}}</p>
+                    <p class="post-date">{{post.date}}</p>
+                </div>
+            </div>
+            <div class="post-body">
+                <p class="post-description" ng-if="!post.expanded">{{post.description | limitTo: 100}}...</p>
+                <p class="post-description" ng-if="post.expanded">{{post.description}}</p>
+                <button ng-click="toggleExpand(post)" class="see-more-btn">
+                    {{post.expanded ? 'See Less' : 'See More'}}
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
     <!-- Testimonials -->
     <section class="testimonials" id="testimonial">
-        <h2>What People Say About Us</h2>
+        <h2>What People Say About Indonesia</h2>
         <div class="testimonial-slider">
             <div class="testimonial" ng-repeat="testimonial in mainCtrl.testimonials">
                 <img ng-src="{{testimonial.image}}" alt="User 1">
@@ -91,8 +118,8 @@
             <ul>
                 <li><a href="#hero-section">Home</a></li>
                 <li><a href="#information">Popular Destinations</a></li>
+                <li><a href="#latest-post">Latest Travel News</a></li>
                 <li><a href="#testimonial">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
 
