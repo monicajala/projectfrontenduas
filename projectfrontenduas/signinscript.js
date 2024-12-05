@@ -1,12 +1,23 @@
 var app = angular.module('authApp', []);
 
-app.controller('AuthController', ['$scope', '$http', function ($scope, $http) {
+app.controller('AuthController', ['$scope', '$http','$window', function ($scope, $http, $window) {
     $scope.currentPage = 'signin'; // Default halaman adalah signin
     $scope.formData = {}; // Data form yang akan dikirim
 
     // Fungsi untuk berpindah halaman
     $scope.navigateTo = function (page) {
         $scope.currentPage = page;
+    };
+
+    // Cek apakah pengguna sudah login
+    $scope.isLoggedIn = function () {
+        return !!$window.localStorage.getItem('authToken'); // Token ada = logged in
+    };
+
+    // Arahkan pengguna ke halaman profil saat ikon diklik
+    $scope.goToProfile = function () {
+        alert('Navigasi ke halaman profil!');
+        // Ganti ini dengan logika navigasi ke halaman profil, jika ada
     };
 
     // Fungsi Sign Up
@@ -25,14 +36,13 @@ app.controller('AuthController', ['$scope', '$http', function ($scope, $http) {
 
     // Fungsi Log In
     $scope.signIn = function () {
-        console.log('Sign In data:', $scope.formData);
-        $http.post('http://localhost:3000/api/auth/signin', $scope.formData) // Update URL ke '/api/auth/signin'
+        $http.post('http://localhost:3000/api/auth/signin', $scope.formData)
             .then(function (response) {
-                alert('Log In successful!');
+                $window.location.href='nyobaynoba.html'; // Pindah ke halaman utama
             })
             .catch(function (error) {
-                console.error('Log In error:', error);
-                alert('Failed to Log In. ' + error.data.error); // Tambahkan pesan error lebih detail
+                console.error('Login error:', error);
+                alert('Login gagal: ' + (error.data.error || 'Unknown error'));
             });
-    };
+    };        
 }]);
